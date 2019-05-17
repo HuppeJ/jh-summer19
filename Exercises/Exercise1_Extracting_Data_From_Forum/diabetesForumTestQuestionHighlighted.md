@@ -10,6 +10,7 @@ Keywords for extracting requirements:
 - How
 - I will be interested
 - can't find
+- I am trying
 
 Main requirements for searching info about a pump: 
 
