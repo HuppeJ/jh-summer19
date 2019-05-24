@@ -1,34 +1,32 @@
 import scrapy
-# import html2text
+from bs4 import BeautifulSoup
     
 # scrapy crawl questions
 # scrapy crawl questions -o questions.json
+# scrapy crawl questions -o questions.jl
 
 class QuestionsSpider(scrapy.Spider):
     name = "questions"
     start_urls = [
-    #    "https://www.diabetes.co.uk/forum/category/ask-a-question.15/?order=view_count",
-        "https://www.diabetes.co.uk/forum/category/ask-a-question.15/page-2?order=view_count",
-  #      "https://www.diabetes.co.uk/forum/category/ask-a-question.15/page-3?order=view_count",
-  #      "https://www.diabetes.co.uk/forum/category/ask-a-question.15/page-4?order=view_count",
-  #      "https://www.diabetes.co.uk/forum/category/ask-a-question.15/page-5?order=view_count",
-  #      "https://www.diabetes.co.uk/forum/category/ask-a-question.15/page-6?order=view_count",
-  #      "https://www.diabetes.co.uk/forum/category/ask-a-question.15/page-7?order=view_count",
- #       "https://www.diabetes.co.uk/forum/category/ask-a-question.15/page-8?order=view_count",
- #       "https://www.diabetes.co.uk/forum/category/ask-a-question.15/page-9?order=view_count",
-  #      "https://www.diabetes.co.uk/forum/category/ask-a-question.15/page-10?order=view_count",
-  #      "https://www.diabetes.co.uk/forum/category/ask-a-question.15/page-11?order=view_count",
- #       "https://www.diabetes.co.uk/forum/category/ask-a-question.15/page-12?order=view_count",
-#        "https://www.diabetes.co.uk/forum/category/ask-a-question.15/page-13?order=view_count",
-#        "https://www.diabetes.co.uk/forum/category/ask-a-question.15/page-14?order=view_count",
+        # 1 - 10
+        "https://www.diabetes.co.uk/forum/category/ask-a-question.15/?order=view_count",
+        # 11 - 20
+        # "https://www.diabetes.co.uk/forum/category/ask-a-question.15/page-11?order=view_count",
+        # 21 - 30
+        # "https://www.diabetes.co.uk/forum/category/ask-a-question.15/page-21?order=view_count",
+        # 31 - 40
+        # "https://www.diabetes.co.uk/forum/category/ask-a-question.15/page-31?order=view_count",
+        # 41 - 50
+        # "https://www.diabetes.co.uk/forum/category/ask-a-question.15/page-41?order=view_count",
     ]
+
+    # Max nb. of page to scrape
+    COUNT_MAX = 50
+    count = 0
 
     def parse(self, response):
         for question in response.css(".discussionListItems li[id]"):
-            href = response.css("h3.title a::attr(href)")[0].get()
-            yield response.follow(href, self.parse_question)
-
-            scraped_info = {
+            info = {
                 "thread_id": question.css('::attr(id)').extract_first(),
                 "title": question.css(".title .PreviewTooltip::text").get(), 
                 "author": question.css(".secondRow .username::text").get(),
@@ -37,25 +35,32 @@ class QuestionsSpider(scrapy.Spider):
                 "views": question.css(".stats .minor dd::text").get(),
             }
 
-            yield scraped_info 
+            # Follow link to question page
+            href = question.css("h3.title a::attr(href)")[-1].get()
+            question_page = response.urljoin(href)
+            request = scrapy.Request(question_page, self.parse_question)
+            request.meta['item'] = info
 
-        # Follow links to author pages
-        print("TEST")
-        print(response.css("h3.title a::attr(href)").getall())
-        #for href in response.css(".discussionListItem h3.title a::attr(href)"):
-        #    yield response.follow(href, self.parse_question)
-        href = response.css("h3.title a::attr(href)")[0].get()
-        yield response.follow(href, self.parse_question)
+            yield request
 
-        # follow pagination links
+        # Follow pagination links
         # Gets the last link (Next page link)
-        # href = response.css(".PageNav a::attr(href)")[-1].get()
-        # yield response.follow(href, self.parse)
+        if (self.count < self.COUNT_MAX):
+            self.count = self.count + 1
+            href = response.css(".PageNav a::attr(href)")[-1].get()
+            yield response.follow(href, self.parse)
 
     def parse_question(self, response):
-        yield {
-            "question": response.css(".messageList .uix_threadAuthor .messageContent .messageText *::text").getall(),
-        }
+        item = response.meta['item']
+        all_paragraphs = response.css(".messageList .uix_threadAuthor .messageContent .messageText *::text").getall()
+        map(str.strip, all_paragraphs)
+        seperator = " "
+        text = seperator.join(all_paragraphs)
+        clean_text = BeautifulSoup(text, "lxml").text
+        new_string = (clean_text.encode('ascii', 'ignore')).decode("utf-8")
+        new_string  = " ".join(new_string.split())
+        item["question"] = new_string
+        yield item
 
 
 
