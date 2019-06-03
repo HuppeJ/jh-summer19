@@ -2,12 +2,12 @@
 
 **question** 
 
-We often see people here asking about why their blood sugars aren't behaving themselves.
+We often see people here <mark>asking about why their blood sugars aren't behaving themselves</mark>.
 
 More often than not, it really helps to test at certain set times of the day to discover patterns in your readings.
 Logging your blood glucose results  and carbohydrate intake, along with meds can help you physically see patterns and often identify the problem foods or times of the day and can open up a new view on your situation, helping you to resolve it.
 
-I've created a spreadsheet using Microsoft Excel which i'd like to share with those having trouble identifying problems with their control as this has really helped me in the past.
+I've created a spreadsheet using Microsoft Excel which i'd like to share with those <mark>having trouble identifying problems with their control as this has really helped me in the past</mark>.
 
 By Monitoring closely and entering your results into the spreadsheet, you will hopefully see a pattern imerge from the chart where your results are plotted, allowing you to identify what's going "wrong".
 

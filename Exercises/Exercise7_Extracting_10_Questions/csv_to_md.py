@@ -7,7 +7,7 @@ import csv
 dir_path = r"C:\Users\jerem\Desktop\jh-summer19\Exercises\Exercise7_Extracting_10_Questions"
 
 
-number_of_file = 9
+number_of_file = 10
 
 for i in range(number_of_file) :
     input_file_name = "\question" + str(i + 1) + ".csv"
