@@ -7,7 +7,7 @@
 - problems / a problem I was having
 - is welcome
 - I am still waiting
-- what is
+- what
 
 **question** 
 

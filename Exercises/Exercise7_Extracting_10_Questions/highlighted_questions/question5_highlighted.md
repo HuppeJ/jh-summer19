@@ -1,5 +1,13 @@
 # title: Newcastle diet journey
 
+## Keywords
+
+- wondering
+- should I
+- struggle
+- have trouble
+- Does anyone have
+
 **question**
 
 Hello! 
@@ -10,31 +18,9 @@ Started Newcastle diet this morning, weighing in at 15st 7.75lb with fasting blo
 
 I have 2 small children (10 months and 32 months) and so fitting exercise in is difficult although I barely get time to rest. Haven't bothered going to gp for advice as I know they will just tell me to eat a low fat high carb diet and carry on taking metformin!
 
-I am wondering if there is anybody on here who has completed the 8 weeks and not 'reversed' their type 2?
+```I am wondering if there is anybody on here who has completed the 8 weeks and not 'reversed' their type 2```?
 
-Also, should I be taking metformin whilst on the diet or should I come off it?
-
-I had lots of questions to ask but now can't remember them!
-
-Anyway, day 1 has not been as bad as I thought it would. Only got back off holiday yesterday and thought it would be hard but as we didn't eat much whilst away (hubby training for a marathon) I had actually lost 5lb over the week, so at least i'm not on a come down from a week of binge eating!
-
-Hoping to update my progress on here over the next 8 weeks and hopefully speak with some people who are doing it/have done it.
-
-Off to bed before my willpower breaks!
-
-**comment 1:**
-
-Hello! 
-
-Been a member of this forum since diagnosis in July 2009 but don't think I've ever posted?!
-
-Started Newcastle diet this morning, weighing in at 15st 7.75lb with fasting bloods of 11.1. Using slimfast bottles (superdrug has them on 3for2) and hoping I can find enough ways to make veggies interesting!
-
-I have 2 small children (10 months and 32 months) and so fitting exercise in is difficult although I barely get time to rest. Haven't bothered going to gp for advice as I know they will just tell me to eat a low fat high carb diet and carry on taking metformin!
-
-I am wondering if there is anybody on here who has completed the 8 weeks and not 'reversed' their type 2?
-
-Also, should I be taking metformin whilst on the diet or should I come off it?
+Also, ```should I be taking metformin whilst on the diet or should I come off it```?
 
 I had lots of questions to ask but now can't remember them!
 
@@ -90,7 +76,7 @@ Good luck with your diet and keep us updated with your progress, as it's good to
 
 **comment 8:**
 
-Well I am fortunate not to have had any side effects such as headaches tiredness etc.,  but as I am coming to the end of day 3, I feel really fed up and depressed!! It was a real struggle to eat the soup I'd made for supper, and the shake tasted awful  ( the same shake that I found more than palatable yesterday!). All this despite being quite hungry. I suppose the fact that I normally have a very varied diet, and am finding this boring might have something to do with it, but I have a dreadful feeling that I am going to have trouble sticking to the regime. Does anyone have any interesting recipes please? I checked the Newcastle MRI centre website, but the recipe page would not load. All the vegetable recipes I have contain cheese, oil, butter or all sorts of other forbidden goodies.
+Well I am fortunate not to have had any side effects such as headaches tiredness etc.,  but as I am coming to the end of day 3, I feel really fed up and depressed!! ```It was a real struggle to eat the soup I'd made for supper, and the shake tasted awful```  ( the same shake that I found more than palatable yesterday!). All this despite being quite hungry. I suppose the fact that I normally have a very varied diet, and am finding this boring might have something to do with it, but I have a dreadful feeling that ```I am going to have trouble sticking to the regime```. ```Does anyone have any interesting recipes please?``` I checked the Newcastle MRI centre website, but the recipe page would not load. All the vegetable recipes I have contain cheese, oil, butter or all sorts of other forbidden goodies.
 
 All ideas gratefully considered!
 

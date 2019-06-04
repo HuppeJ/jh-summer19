@@ -1,12 +1,14 @@
 # title: chicken pox
 
+## Keywords 
+
+- Does this mean
+- I have not found
+- Do you think
+
 **question**
 
-my daughter has just brought chicken pox home from school and i wanted to know is this dangerous to diabetics as it is to people with asthma. one of our friends down the road said they read something about it be harmful to diabetics but i havent found any litrature. Does this mean i can go on holiday for 2 weeks  8)
-
-**comment 1:**
-
-my daughter has just brought chicken pox home from school and i wanted to know is this dangerous to diabetics as it is to people with asthma. one of our friends down the road said they read something about it be harmful to diabetics but i havent found any litrature. Does this mean i can go on holiday for 2 weeks  8)
+my daughter has just brought chicken pox home from school and i wanted to know is this dangerous to diabetics as it is to people with asthma. one of our friends down the road said they read something about it be harmful to diabetics but ```i havent found any litrature```. ```Does this mean i can go on holiday for 2 weeks```  8)
 
 **comment 2:**
 
@@ -77,5 +79,5 @@ There are several theories that could explain how someone might get chickenpox m
 
 **comment 10:**
 
-Hi, im 45 and type 1 i have just found out that my granson has chicken pox and we had him on friday. The thing is i have never had them, even when my kids all had them at the same time. Do u think i should call my GP about getting vaccinated? Just in case?  Its gunna drive me nuts not seeing my little angel for a week :'( xx
+Hi, im 45 and type 1 i have just found out that my granson has chicken pox and we had him on friday. The thing is i have never had them, even when my kids all had them at the same time. ```Do u think i should call my GP about getting vaccinated?``` Just in case?  Its gunna drive me nuts not seeing my little angel for a week :'( xx
 

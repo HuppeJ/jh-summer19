@@ -1,28 +1,18 @@
 # title: HOW CAN THEY PUT ME INTO ESA WRAG GROUP WHEN MY WIFE IS CARE
 
+## Keywords: 
+
+- how
+
 **question**
 
 HELLO,
-CAN ANYONE EXPLAIN, how you can be put into the back to work group in ESA WHEN YOU HAVE A CARER??????
+CAN ANYONE EXPLAIN, ```how you can be put into the back to work group in ESA WHEN YOU HAVE A CARER```??????
 I have had insulin diabetes for 43 years since age of 9, now almost 52, have worked since age of 15 til about just over year ago, when got severe complications neuropathy of feet and hands ( nerve damage caused by years of diabetes ), also where used to get Hypo awareness ( low blood sugar warnings ) I no longer get warning and is consequentialy very dangerous if left on own, so wife is my carer.
 I am also on DLA level 2, went to ATOS med. and doc. there said would put me in support group after looking at Consult., GP, Specialists letters etc and seeing me, she never even examined me, awaiting copy of report sposed to av been here 2 days ago, coz they put me in WRAG!!!! and want to see whether this doc lied, if so will complain 1) to Atos 2) GMC. 
 Cant walk far coz of pain, keep dropping things due to pain in hands am in constant pain even with max. painkillers and been told they can do nothing for me by specialists, so when i went to WRAG interview with my wife, and wife said she had to go everywhere with me and this P""" said " we can get transport to pick you up" !!!!! wats that got to do with my low blood sugar then he said I might get better, I have an incurable chronic desease, unless he knows better than all the specialists in the world. 
 We are appealing and i walked out of WRAG interview with wife, seeing manager of this idiot tomorra 8/7/2011 making off. complaint, see what they av to say, if find they useless, will complain about them, when working if was as inept as these I would have been sacked for grosse incompetance.
-STILL ASK THE QUESTION HOW CAN YOU BE EXPECTED TO FIND JOB OR TRAINING WHEN WIFE IS CARER, WHO CAN GIVE ME LIFE SAVING INJECTION, WHICH SHE HAS DONE FOR ME ON NUMEROUS OCCASIONS !!!!!!! also gave letter to local MP.
-DIS. ACTION representing me with the appeal, and GP has written brilliant letter for me and said she was disgusted by them and said bring it on, am on antidepressants coz of so many years of diabetes, been seeing psycotherapist for this, and pain clinic are going to try intravenous pain relief for me, only time I have had any help in 43 years, just got DLA and carers and now they wanna take it off, coz can see if DLA see that you appear to be looking for work even if you arnt they will say " You must have had a miracle cure and you dont need the help anymore " so lose DLA and carers.
-Anybody who says they are not connected are l;iving in dream world, this is the GOV. way of stopping money going to the right people, [edit] IM REFERRING TO ALL PARTIES, not biased at all
-
-YOURS IN PAIN AS WRITING THIS, STEVE, SO ANGRY
-
-**comment 1:**
-
-HELLO,
-CAN ANYONE EXPLAIN, how you can be put into the back to work group in ESA WHEN YOU HAVE A CARER??????
-I have had insulin diabetes for 43 years since age of 9, now almost 52, have worked since age of 15 til about just over year ago, when got severe complications neuropathy of feet and hands ( nerve damage caused by years of diabetes ), also where used to get Hypo awareness ( low blood sugar warnings ) I no longer get warning and is consequentialy very dangerous if left on own, so wife is my carer.
-I am also on DLA level 2, went to ATOS med. and doc. there said would put me in support group after looking at Consult., GP, Specialists letters etc and seeing me, she never even examined me, awaiting copy of report sposed to av been here 2 days ago, coz they put me in WRAG!!!! and want to see whether this doc lied, if so will complain 1) to Atos 2) GMC. 
-Cant walk far coz of pain, keep dropping things due to pain in hands am in constant pain even with max. painkillers and been told they can do nothing for me by specialists, so when i went to WRAG interview with my wife, and wife said she had to go everywhere with me and this P""" said " we can get transport to pick you up" !!!!! wats that got to do with my low blood sugar then he said I might get better, I have an incurable chronic desease, unless he knows better than all the specialists in the world. 
-We are appealing and i walked out of WRAG interview with wife, seeing manager of this idiot tomorra 8/7/2011 making off. complaint, see what they av to say, if find they useless, will complain about them, when working if was as inept as these I would have been sacked for grosse incompetance.
-STILL ASK THE QUESTION HOW CAN YOU BE EXPECTED TO FIND JOB OR TRAINING WHEN WIFE IS CARER, WHO CAN GIVE ME LIFE SAVING INJECTION, WHICH SHE HAS DONE FOR ME ON NUMEROUS OCCASIONS !!!!!!! also gave letter to local MP.
+STILL ASK THE QUESTION ```HOW CAN YOU BE EXPECTED TO FIND JOB OR TRAINING WHEN WIFE IS CARER```, WHO CAN GIVE ME LIFE SAVING INJECTION, WHICH SHE HAS DONE FOR ME ON NUMEROUS OCCASIONS !!!!!!! also gave letter to local MP.
 DIS. ACTION representing me with the appeal, and GP has written brilliant letter for me and said she was disgusted by them and said bring it on, am on antidepressants coz of so many years of diabetes, been seeing psycotherapist for this, and pain clinic are going to try intravenous pain relief for me, only time I have had any help in 43 years, just got DLA and carers and now they wanna take it off, coz can see if DLA see that you appear to be looking for work even if you arnt they will say " You must have had a miracle cure and you dont need the help anymore " so lose DLA and carers.
 Anybody who says they are not connected are l;iving in dream world, this is the GOV. way of stopping money going to the right people, [edit] IM REFERRING TO ALL PARTIES, not biased at all
 
@@ -52,9 +42,9 @@ Re: HOW CAN THEY PUT ME INTO ESA WRAG GROUP WHEN MY WIFE IS
 
 Hi Steve
 
-This sounds very unpleasant. This sounds like one of the times when some basic compassion is allowed no room for manoeuvre within the guidelines. I don't know enough about this area to know whether this is the guidelines themselves or on the part of the individual employee here?
+This sounds very unpleasant. This sounds like one of the times when some basic compassion is allowed no room for manoeuvre within the guidelines. ```I don't know enough about this area to know whether this is the guidelines themselves or on the part of the individual employee here```?
 
-I hope this isn't too invasive a question, I'm wondering how your control is and whether the need for glucagon to be available could be reduced?
+I hope this isn't too invasive a question, ```I'm wondering how your control is and whether the need for glucagon to be available could be reduced```?
 
 I had some pretty graphic hypos earlier in my career. In my case I was fortunate as I had nurses at my workplace who were able to administer glucagon. Luckily this was only only needed once but assistance was needed at other times by other means.
 
@@ -90,7 +80,7 @@ Hi Steve, although I am no expert, I do have Diabetes but also have brain damage
 
 Re: HOW CAN THEY PUT ME INTO ESA WRAG GROUP WHEN MY WIFE IS 
 
-ATOS related but not diabetes related (sorry) but someone mum knows had 2 fingers cut off by machinery at work and he now has to be reviewed in case his condition has got any better! Er, can fingers suddenly grow back? It's all official form filling beurocracy and I hate it, they don't care for the person, when you phone the 1st thing they ask for is your NI number. So don't take it personally  but good luck beating them at their own game.
+ATOS related but not diabetes related (sorry) but someone mum knows had 2 fingers cut off by machinery at work and he now has to be reviewed in case his condition has got any better! Er, ```can fingers suddenly grow back```? It's all official form filling beurocracy and I hate it, they don't care for the person, when you phone the 1st thing they ask for is your NI number. So don't take it personally  but good luck beating them at their own game.
 
 **comment 7:**
 
