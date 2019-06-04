@@ -2,6 +2,15 @@
 #%% [markdown]
 ## Extracting Sentences Containing Requirements Keywords
 
+### Algorithm: 
+
+# - 1. Get the original annotations
+# - 2. Lemmatize the original annotations
+# - 3. Find all synonyms of annotations
+# - 4. Merge the two annotations lists
+# - 5. Remove duplicates
+# - 6. Write in csv file new values
+
 #%% 
 import csv
 import os
@@ -14,11 +23,7 @@ from nltk.corpus import wordnet
 
 #%% 
 # Init tools
-stop_words = stopwords.words('english')
-porter = PorterStemmer()
 lemmatizer = WordNetLemmatizer()
-# lemmatizer.lemmatize(word)
-
 #%%
 dir_path = r"C:\Users\jerem\Desktop\jh-summer19\Exercises\Exercise8_Adding_The_New_Annotations"
 input_file_name = r"\annotations.csv"
@@ -56,5 +61,3 @@ with open(dir_path + output_file_name, mode='w', encoding="utf-8", newline='') a
     csv_writer = csv.writer(csv_file, delimiter=',')
     for annotation in improved_annotations:
         csv_writer.writerow([annotation])
-
-#%%
