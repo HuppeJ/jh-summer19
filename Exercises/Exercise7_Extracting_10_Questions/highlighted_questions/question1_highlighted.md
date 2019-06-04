@@ -1,28 +1,22 @@
 # title: Discovery Sheets
 
+## Keywords: 
+
+- asking / asked
+- having trouble
+- problems / a problem I was having
+- is welcome
+- I am still waiting
+- what is
+
 **question** 
 
-We often see people here <mark>asking about why their blood sugars aren't behaving themselves</mark>.
+We often see people here ```asking about why their blood sugars aren't behaving themselves```.
 
 More often than not, it really helps to test at certain set times of the day to discover patterns in your readings.
 Logging your blood glucose results  and carbohydrate intake, along with meds can help you physically see patterns and often identify the problem foods or times of the day and can open up a new view on your situation, helping you to resolve it.
 
-I've created a spreadsheet using Microsoft Excel which i'd like to share with those <mark>having trouble identifying problems with their control as this has really helped me in the past</mark>.
-
-By Monitoring closely and entering your results into the spreadsheet, you will hopefully see a pattern imerge from the chart where your results are plotted, allowing you to identify what's going "wrong".
-
-Blood Glucose Logging Sheet
-
-The log book is pre-sized for an A4 print out too, so you can also print your results with ease.
-
-**comment 1:**
-
-We often see people here asking about why their blood sugars aren't behaving themselves.
-
-More often than not, it really helps to test at certain set times of the day to discover patterns in your readings.
-Logging your blood glucose results and carbohydrate intake, along with meds can help you physically see patterns and often identify the problem foods or times of the day and can open up a new view on your situation, helping you to resolve it.
-
-I've created a spreadsheet using Microsoft Excel which i'd like to share with those having trouble identifying problems with their control as this has really helped me in the past.
+I've created a spreadsheet using Microsoft Excel which i'd like to share with those ```having trouble identifying problems with their control as this has really helped me in the past```.
 
 By Monitoring closely and entering your results into the spreadsheet, you will hopefully see a pattern imerge from the chart where your results are plotted, allowing you to identify what's going "wrong".
 
@@ -58,14 +52,14 @@ The spreadsheet is printable so it can be filled in by hand if that is the prefe
 
 **comment 6:**
 
-DAFNE isn't available in Portsmouth, although the diabetic clinic do run education courses. Anything that helps to easily track blood glucose is welcome.
+DAFNE isn't available in Portsmouth, although the diabetic clinic do run education courses. ```Anything that helps to easily track blood glucose is welcome```.
 
 **comment 7:**
 
 blackbird said:
 				
 			
-DAFNE isn't available in Portsmouth, although the diabetic clinic do run education courses. Anything that helps to easily track blood glucose is welcome.Click to expand...
+DAFNE isn't available in Portsmouth, although the diabetic clinic do run education courses. ```Anything that helps to easily track blood glucose is welcome```.Click to expand...
 
 Can you get as far as Bournemouth?
 
@@ -81,11 +75,11 @@ Jiggling Insulin for Goal Success And Well-being.
 
 If anyone is using Accu-check meters you can get an IR lead and Compass software to transfer the meter readings to the pc, for free. The program is quite good, it gives reports on day/week averages. You can transfer the data via IR or enter it manually. You can also enter carbs and execrsize data. 
 
-I called them last week about a problem I was having with the Mulitclix and also asked them about the IR on the meter itself. They sent me the complete kit but I am still waiting for the COM to USB converter, they had run out but promised to sent me one when they get them back in stock.
+I called them last week about ```a problem I was having with the Mulitclix and also asked them about the IR on the meter itself```. They sent me the complete kit but ```I am still waiting for the COM to USB converter, they had run out``` but promised to sent me one when they get them back in stock.
 
 **comment 10:**
 
-Hi Stuboy, I am new here and thanks for the spreadsheet it is fab and will really help me record my eratic blood sugar...but a moment of ignorance (I am yet to see any form of specialist so that is my excuse) but what is the 'rapid' column for please?
+Hi Stuboy, I am new here and thanks for the spreadsheet it is fab and will really help me record my eratic blood sugar...but a moment of ignorance (I am yet to see any form of specialist so that is my excuse) but ```what is the 'rapid' column for please```?
 Sam
 
 
