@@ -37,12 +37,6 @@ class SubForumSpider(scrapy.Spider):
                 "thread_views": question.css(".stats .minor dd::text").get(),
             }
 
-            # Follow link to question page
-            #href = question.css("h3.title a::attr(href)")[-1].get()
-            #question_page = response.urljoin(href)
-            #request = scrapy.Request(question_page, self.parse_question)
-            #request.meta['item'] = info
-
             yield info
 
         # If there is a Next button go to next page of threads
@@ -59,20 +53,6 @@ class SubForumSpider(scrapy.Spider):
             # Gets the last link (Next page link)
             href = response.css(".PageNav a::attr(href)")[-1].get()
             yield response.follow(href, self.parse)
-
-    #def parse_question(self, response):
-        #item = response.meta['item']
-        #all_paragraphs = response.css(".messageList .uix_threadAuthor .messageContent .messageText *::text").getall()
-        #map(str.strip, all_paragraphs)
-        #seperator = " "
-        #text = seperator.join(all_paragraphs)
-        #clean_text = BeautifulSoup(text, "lxml").text
-        #new_string = (clean_text.encode('ascii', 'ignore')).decode("utf-8")
-        #new_string  = " ".join(new_string.split())
-        #item["question"] = new_string
-        #yield item
-
-
 
 
 
