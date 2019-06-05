@@ -1,0 +1,19 @@
+Future promessing fields:
+data collection 
+data verification
+
+How to enforce certain learning in a machine learning model
+
+***repoduce results of research paper***
+
+Top two skills when hiring? 
+- Strong analytics
+- Know the hole workflow
+- Multi-disciplinaire, connaitre beaucoup pas juste ML connaitre aussi Software Engineering
+- Flexibility, ability to adapt rapidly, 
+- Hability to step out of the optimization and look at the big persective... who is gonna use this product? Have a good global vision.
+- Skills in domains, des specialit/s dans differents domaines docteur, avocat, architecture.
+- Critical thinking about if a ML model is good or not good and beeing able to explain why it is or it isn't.
+
+One missing expected skill?
+- Data collection, collecting data, find meaning in data sets, build data sets with sripts
