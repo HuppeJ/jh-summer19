@@ -28,11 +28,11 @@ class QuestionsSpider(scrapy.Spider):
         for question in response.css(".discussionListItems li[id]"):
             info = {
                 "thread_id": question.css('::attr(id)').extract_first(),
-                "title": question.css(".title .PreviewTooltip::text").get(), 
-                "author": question.css(".secondRow .username::text").get(),
-                "startDate": question.css(".secondRow .startDate .DateTime::text").get(),
-                "replies": question.css(".stats .major dd::text").get(),
-                "views": question.css(".stats .minor dd::text").get(),
+                "thread_title": question.css(".title .PreviewTooltip::text").get(), 
+                "thread_author": question.css(".secondRow .username::text").get(),
+                "thread_startDate": question.css(".secondRow .startDate .DateTime::text").get(),
+                "thread_replies": question.css(".stats .major dd::text").get(),
+                "thread_views": question.css(".stats .minor dd::text").get(),
             }
 
             # Follow link to question page
