@@ -3,8 +3,8 @@ from bs4 import BeautifulSoup
 import csv
 
 def get_subforumLinks():
-    dir_path = r"C:\Users\jerem\Desktop\jh-summer19\Exercises\Exercise11_Extract_\scrapyDiabetesForum\getAllSubforumLinks"
-    input_file_name = r"\counts_v2_totals.csv"
+    dir_path = r"C:\Users\jerem\Desktop\jh-summer19\Exercises\Exercise11_Extract_\scrapyDiabetesForum\counts\original"
+    input_file_name = r"\counts_v2.csv"
     with open(dir_path + input_file_name) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         subforumlinks = []

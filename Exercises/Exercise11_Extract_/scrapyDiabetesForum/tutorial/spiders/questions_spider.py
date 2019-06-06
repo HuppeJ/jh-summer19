@@ -1,3 +1,4 @@
+# Scraped the subforum "Ask-a-question" for first sample for testing
 import scrapy
 from bs4 import BeautifulSoup
     
