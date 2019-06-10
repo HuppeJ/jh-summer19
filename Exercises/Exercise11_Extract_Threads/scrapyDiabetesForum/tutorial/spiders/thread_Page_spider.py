@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import csv
 
 def get_subforumLinks():
-    dir_path = r"C:\Users\jerem\Desktop\jh-summer19\Exercises\Exercise11_Extract_\scrapyDiabetesForum\counts\original"
+    dir_path = r"C:\Users\jerem\Desktop\jh-summer19\Exercises\Exercise11_Extract_Threads\scrapyDiabetesForum\counts\original"
     input_file_name = r"\counts_v2.csv"
     with open(dir_path + input_file_name) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
@@ -13,6 +13,17 @@ def get_subforumLinks():
             subforumlinks.append(subforumLink)
     subforumlinks.pop(0) 
     return subforumlinks
+
+def clean_text(text):
+        #all_paragraphs = response.css(".messageList .uix_threadAuthor .messageContent .messageText *::text").getall()
+        #map(str.strip, all_paragraphs)
+        #seperator = " "
+        #text = seperator.join(all_paragraphs)
+        clean_text = BeautifulSoup(text, "lxml").text
+        new_string = (clean_text.encode('ascii', 'ignore')).decode("utf-8")
+        new_string  = " ".join(new_string.split())
+        return new_string
+        #item["thread"] = new_string
 
 # scrapy crawl thread
 # scrapy crawl thread -o thread.json
@@ -33,7 +44,6 @@ class ThreadSpider(scrapy.Spider):
 
             # Follow link to thread page
             href = thread.css("h3.title a::attr(href)")[-1].get()
-            print("ICICI href", href)
             thread_page = response.urljoin(href)
             request = scrapy.Request(thread_page, self.parse_thread)
             request.meta['item'] = info
@@ -73,20 +83,12 @@ class ThreadSpider(scrapy.Spider):
             # Gets the last link (Next page link)
             href = response.css(".PageNav a::attr(href)")[-1].get()       
             next_post_page = response.urljoin(href)   
-            request = scrapy.Request(href, self.parse_thread)
+            request = scrapy.Request(next_post_page, self.parse_thread)
             request.meta['item'] = item
 
             yield request
 
 
-        #all_paragraphs = response.css(".messageList .uix_threadAuthor .messageContent .messageText *::text").getall()
-        #map(str.strip, all_paragraphs)
-        #seperator = " "
-        #text = seperator.join(all_paragraphs)
-        #clean_text = BeautifulSoup(text, "lxml").text
-        #new_string = (clean_text.encode('ascii', 'ignore')).decode("utf-8")
-        #new_string  = " ".join(new_string.split())
-        #item["thread"] = new_string
 
 
     def parse_post(self, response):
