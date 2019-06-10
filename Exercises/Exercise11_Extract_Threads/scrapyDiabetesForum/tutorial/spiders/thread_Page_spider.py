@@ -15,23 +15,20 @@ def get_subforumLinks():
     return subforumlinks
 
 def clean_text(text):
-        #all_paragraphs = response.css(".messageList .uix_threadAuthor .messageContent .messageText *::text").getall()
-        #map(str.strip, all_paragraphs)
-        #seperator = " "
-        #text = seperator.join(all_paragraphs)
         clean_text = BeautifulSoup(text, "lxml").text
         new_string = (clean_text.encode("ascii", "ignore")).decode("utf-8")
         new_string  = " ".join(new_string.split())
         return new_string
-        #item["thread"] = new_string
 
 # scrapy crawl thread
 # scrapy crawl thread -o thread.json
 # scrapy crawl thread -o thread.jl
 
+index = 1
+
 class ThreadSpider(scrapy.Spider):
     name = "thread"
-    start_urls = [get_subforumLinks()[41]]
+    start_urls = [get_subforumLinks()[index]]
 
     # Nb. of page scraped
     count = 1
@@ -118,13 +115,32 @@ class ThreadSpider(scrapy.Spider):
                 if title == "Hug":
                     item["post_hug"] = value
             item["post_number"] = post.css(".messageDetails .postNumber::text").get()
-            #item["post_messageText"] = post.css(".messageDetails .postNumber::text").get()
+            messageTextDiv = post.css(".messageText")
+            #  messageTextDiv.xpath(".//text()[not(ancestor::div[@class='bbCodeQuote'])]").extract()
+            
+            # Get all textNode in messageText div
+            all_text = post.css(".messageText *::text").getall()
+            all_text = " ".join(all_text)
 
+            # Get all textNode in Quote div
+            all_quote_text = post.css(".messageText .bbCodeQuote *::text").getall() 
+            all_quote_text = " ".join(all_quote_text)
+            # Remove textNode comming from Quote div of messageText div
+            if (all_quote_text in all_text):
+                all_text = all_text.replace(all_quote_text, "")
+            
+
+            map(str.strip, all_text)
+            map(str.strip, all_quote_text)
+            all_text = clean_text(all_text)
+            all_quote_text = clean_text(all_quote_text)
+
+            item["post_messageText"] = all_text
+            item["post_quoteText"] = all_quote_text
+            
             yield item
 
-            # //div[@id = 'content']/descendant::text()[not(ancestor::div/@class='infobox')]
-
-        
+       
         # If there is a Next button go to next page of posts
         has_nextPage = False
         a_tags = response.css(".pageNavLinkGroup .PageNav a::text")
