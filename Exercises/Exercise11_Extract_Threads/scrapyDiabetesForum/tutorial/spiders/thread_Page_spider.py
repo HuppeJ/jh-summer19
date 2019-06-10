@@ -117,12 +117,8 @@ class ThreadSpider(scrapy.Spider):
                     item["post_optimistic"] = value
                 if title == "Hug":
                     item["post_hug"] = value
-
-            #    if(item.css("img::attr(title)").extract_first() == "Like"):
-            #        print("HERE IS A LIKE")
-            #        item["post_likes"] = item.css("strong::text")
-            #    else:
-            #        item["post_likes"] = 0
+            item["post_number"] = post.css(".messageDetails .postNumber::text").get()
+            #item["post_messageText"] = post.css(".messageDetails .postNumber::text").get()
 
             yield item
 
