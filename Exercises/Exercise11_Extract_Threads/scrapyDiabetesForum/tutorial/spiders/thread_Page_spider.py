@@ -89,9 +89,34 @@ class ThreadSpider(scrapy.Spider):
 
             item["post_DateTime"] = post.css(".messageDetails .uix_DateTime::text").get()
             
-            #items = post.css(".likesSummary .dark_postrating_outputlist li")
-            #for item in items:
-            #    print("ITEMS", item)
+            item["post_like"] = 0
+            item["post_agree"] = 0
+            item["post_useful"] = 0
+            item["post_funny"] = 0
+            item["post_informative"] = 0
+            item["post_friendly"] = 0
+            item["post_optimistic"] = 0
+            item["post_hug"] = 0
+
+            for li_item in post.css(".dark_postrating_outputlist li"):
+                title = li_item.css("img::attr(title)").get()
+                value = li_item.css("strong::text").get()
+                if title == "Like":
+                    item["post_like"] = value
+                if title == "Agree":
+                    item["post_agree"] = value
+                if title == "Useful":
+                    item["post_useful"] = value
+                if title == "Funny":
+                    item["post_funny"] = value
+                if title == "Informative":
+                    item["post_informative"] = value
+                if title == "Friendly":
+                    item["post_friendly"] = value
+                if title == "Optimistic":
+                    item["post_optimistic"] = value
+                if title == "Hug":
+                    item["post_hug"] = value
 
             #    if(item.css("img::attr(title)").extract_first() == "Like"):
             #        print("HERE IS A LIKE")
@@ -100,6 +125,8 @@ class ThreadSpider(scrapy.Spider):
             #        item["post_likes"] = 0
 
             yield item
+
+            # //div[@id = 'content']/descendant::text()[not(ancestor::div/@class='infobox')]
 
         
         # If there is a Next button go to next page of posts
