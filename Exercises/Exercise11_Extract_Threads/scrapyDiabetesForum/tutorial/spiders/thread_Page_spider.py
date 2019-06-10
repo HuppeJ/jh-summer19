@@ -40,6 +40,12 @@ class ThreadSpider(scrapy.Spider):
         for thread in response.css(".discussionListItems li[id]"):
             info = {
                 "thread_id": thread.css("::attr(id)").extract_first(),
+                "thread_title": thread.css(".title .PreviewTooltip::text").get(), 
+                "thread_link": response.urljoin(thread.css("h3.title a::attr(href)")[-1].get()), 
+                "thread_author": thread.css(".secondRow .username::text").get(),
+                "thread_startDate": thread.css(".secondRow .startDate .DateTime::text").get(),
+                "thread_replies": thread.css(".stats .major dd::text").get(),
+                "thread_views": thread.css(".stats .minor dd::text").get(),
             }
 
             # Follow link to thread page
@@ -80,6 +86,18 @@ class ThreadSpider(scrapy.Spider):
                 item["post_userNbMessages"] = None
                 item["post_userLikesReceived"] = None
                 item["post_userTrophyPoints"] = None
+
+            item["post_DateTime"] = post.css(".messageDetails .uix_DateTime::text").get()
+            
+            #items = post.css(".likesSummary .dark_postrating_outputlist li")
+            #for item in items:
+            #    print("ITEMS", item)
+
+            #    if(item.css("img::attr(title)").extract_first() == "Like"):
+            #        print("HERE IS A LIKE")
+            #        item["post_likes"] = item.css("strong::text")
+            #    else:
+            #        item["post_likes"] = 0
 
             yield item
 
