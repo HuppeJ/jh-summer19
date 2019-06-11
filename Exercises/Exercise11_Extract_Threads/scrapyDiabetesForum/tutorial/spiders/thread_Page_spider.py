@@ -1,6 +1,8 @@
 import scrapy
 from bs4 import BeautifulSoup
 import csv
+import os
+import re
 
 def get_subforumLinks():
     dir_path = r"C:\Users\jerem\Desktop\jh-summer19\Exercises\Exercise11_Extract_Threads\scrapyDiabetesForum\counts\original"
@@ -11,7 +13,6 @@ def get_subforumLinks():
         for row in csv_reader:
             subforumLink = row[3]
             subforumlinks.append(subforumLink)
-    subforumlinks.pop(0) 
     return subforumlinks
 
 def clean_text(text):
@@ -20,15 +21,20 @@ def clean_text(text):
         new_string  = " ".join(new_string.split())
         return new_string
 
+def clean_text_for_filename(text):
+    text = re.sub(r'[\\/*?:"<>|]', '', text)
+    text = clean_text(text)
+    return text
+
 # scrapy crawl thread
 # scrapy crawl thread -o thread.json
 # scrapy crawl thread -o thread.jl
 
-index = 1
-
+index = 30
 class ThreadSpider(scrapy.Spider):
     name = "thread"
     start_urls = [get_subforumLinks()[index]]
+    html_path_out = r"C:\Users\jerem\Desktop\jh-summer19\Exercises\Exercise11_Extract_Threads\scrapyDiabetesForum\thread\source\30-diabetes management_blood glucose monitoring"
 
     # Nb. of page scraped
     count = 1
@@ -67,6 +73,16 @@ class ThreadSpider(scrapy.Spider):
             yield response.follow(href, self.parse)
 
     def parse_thread(self, response):
+        title = clean_text_for_filename(response.css(".titleBar h1::text").get())
+        if response.css(".currentPage::text"):
+            page_number = response.css(".currentPage::text")[0].get()
+        else:
+            page_number = str(1)
+        file_name = title + "_Page-" + page_number + ".html"
+        html_file_name = os.path.join(self.html_path_out, file_name)
+        with open(html_file_name, 'w', encoding="utf-8") as html_file:
+            html_file.write(response.text)
+        
         item = response.meta["item"]
 
         for post in response.css(".messageList li[id]"):
