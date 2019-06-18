@@ -19,3 +19,8 @@ https://dev.to/codemouse92/dead-simple-python-classes-42f7
   - ```java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer preload tokenize,ssplit,pos,lemma,ner,parse,depparse status_port 9000 -port 9000 -timeout 15000 &```
 - In the Anaconda prompt execute script in the activated desired virtual environnement: 
   - ```scripts/core_nlp_test.py```
+
+## Run project
+
+- From the folder jh-summer19/project/ run in the anaconda prompt the command: 
+- ```python -m rfut```
