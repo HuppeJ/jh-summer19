@@ -14,17 +14,19 @@ df[nb_threads_updated_column] = 0
 subforum_nb_posts_updated_column = "subforum_nb_posts_updated"
 df[subforum_nb_posts_updated_column] = 0
 
-# TODO: update nb threads if needed...
-#nb_threads_rootdir=r"C:\Users\jerem\Desktop\test_update_stats"
-#for subdir, dirs, files in os.walk(rootdir):
-#    for file in files:
-#        fileInput = subdir + os.sep + file
-#        if fileInput.endswith(".csv"):
-#            df_input = pd.read_csv(fileInput)
-#            filename = file[:-4]
-#            nb_rows = len(df_input)
-#            row_index = int(filename) - 1
-#            df.at[row_index, nb_threads_updated_column] = nb_rows
+
+nb_threads_rootdir=r"C:\Users\jerem\Documents\internship_summer_19\data_scraped\diabetes.co.uk\posts_data\data"
+for subdir, dirs, files in os.walk(nb_threads_rootdir):
+    for file in files:
+        fileInput = subdir + os.sep + file
+        if fileInput.endswith(".csv"):
+            df_input = pd.read_csv(fileInput)
+            df_input_copy = df_input.copy()
+            filename = file[:-4]    
+            df_input_copy = df_input_copy.drop_duplicates('thread_id')       
+            nb_threads = len(df_input_copy)
+            row_index = int(filename) - 1
+            df.at[row_index, nb_threads_updated_column] = nb_threads
 
 
 # Updating nb of posts 
@@ -32,7 +34,7 @@ df[subforum_nb_posts_updated_column] = 0
 # Note: Greeting and introduction at index 0 but filename is 1.csv so row_index = filename - 1 
 # df["subforum_title"][0]
 
-subforum_nb_posts_rootdir=r"C:\Users\jerem\Documents\internship_summer_19\data_scraped\diabetes.co.uk\threads_data\data"
+subforum_nb_posts_rootdir=r"C:\Users\jerem\Documents\internship_summer_19\data_scraped\diabetes.co.uk\posts_data\data"
 for subdir, dirs, files in os.walk(subforum_nb_posts_rootdir):
     for file in files:
         fileInput = subdir + os.sep + file
@@ -44,7 +46,7 @@ for subdir, dirs, files in os.walk(subforum_nb_posts_rootdir):
             df.at[row_index, subforum_nb_posts_updated_column] = nb_rows
 
 
-output_file_name = r"\counts_v3_updated.csv"
+output_file_name = r"\counts_v4_updated.csv"
 df.to_csv(dir_path + output_file_name, sep=',', encoding='utf-8')
 
 
