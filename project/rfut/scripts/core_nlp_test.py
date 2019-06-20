@@ -67,7 +67,6 @@ from nltk.parse.corenlp import CoreNLPDependencyParser
 parser = CoreNLPDependencyParser()
 parse = next(parser.raw_parse("I put the book in the box on the table."))
 #%%
-from nltk.corpus import treebank
 from nltk.parse import CoreNLPParser
 
 parser = CoreNLPParser(url='http://localhost:9000')

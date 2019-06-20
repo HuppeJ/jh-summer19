@@ -22,10 +22,14 @@ def remove_sentence(sentence, nb_alnum_characters, nb_words, short_sentences_to_
     if nb_alnum_characters <= 2:
         return True
     if nb_words == 1 and "?" in sentence:
+        return False
+    if sentence.isdigit():
+        return True
+    if nb_words == 1: 
         return True
     if any(substring in sentence for substring in short_sentences_to_remove):
         return True
-    
+
     return False
 
 def run(): 
