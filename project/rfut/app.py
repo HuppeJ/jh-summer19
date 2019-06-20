@@ -5,9 +5,10 @@ from rfut.scripts.get_percentage_of_threads_data import run as run_get_percentag
 from rfut.scripts.parse_posts_to_sentences import run as run_parse_posts_to_sentences
 from rfut.scripts.remove_short_messages import run as run_remove_short_messages
 from rfut.scripts.get_synonyms import run as run_get_synonyms
+from rfut.scripts.remove_introduction_threads import run as run_remove_introduction_threads
 
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")
-    run_get_synonyms()
+    run_remove_introduction_threads()
     print("--- %s seconds ---" % (time.time() - start_time))

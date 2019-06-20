@@ -80,6 +80,7 @@ def run():
 
     # Remove all non desired sentences:
     # See function remove_sentence above
+    # any(sp.is_word_in_text(word, thread_title) for word in words_to_remove):
     short_sentences_to_remove = ["Click to expand"]
 
     df_with_stats_parsed = df_with_stats.copy()

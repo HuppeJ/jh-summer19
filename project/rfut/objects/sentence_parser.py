@@ -42,3 +42,9 @@ class SentenceParser(object):
         # tokens = string.split()
         # n_tokens = len(tokens)
         # return n_tokens
+    
+    def is_word_in_text(self, word, text):
+        pattern = r'(^|[^\w]){}([^\w]|$)'.format(word)
+        pattern = re.compile(pattern, re.IGNORECASE)
+        matches = re.search(pattern, text)
+        return bool(matches)
