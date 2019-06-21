@@ -11,5 +11,5 @@ from rfut.scripts.annotations_tagger import run as run_annotations_tagger
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")
-    run_annotations_tagger()
+    run_core_nlp_interrogative_sentence_tagger()
     print("--- %s seconds ---" % (time.time() - start_time))
