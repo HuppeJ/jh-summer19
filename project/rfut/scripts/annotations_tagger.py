@@ -18,7 +18,7 @@ def run():
 
     # Load sample of threads data in dataframe
     #  TODO : parsed_0.02_kept_threads_with_is_question.csv
-    threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "parsed_0.02_of_threads_kept_threads.csv"]
+    threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "parsed_0.02_kept_threads_with_is_question.csv"]
     input_file = os.path.join('', *threads_sample_path)
     df_input = pd.read_csv(input_file)
 
@@ -30,7 +30,7 @@ def run():
 
     df_input["has_annotations"] = False
 
-    df_input = df_input.sample(100)
+    # df_input = df_input.sample(100)
 
     for row in df_input.itertuples():
         sentence = str(df_input.at[row.Index, "sentence"])
@@ -41,7 +41,7 @@ def run():
      
 
     # Write output file
-    filename = "parsed_0.02_kept_threads_with_is_question_and_keywords.csv"
+    filename = "parsed_0.02_kept_threads_with_is_question_and_annotations.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join('', *posts_path)
     df_input.to_csv(output_file, sep=',', encoding='utf-8') 
