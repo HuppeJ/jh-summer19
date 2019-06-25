@@ -75,5 +75,35 @@ def run():
     print("Nb. of sentences with annotations that are in question form", nb_annotations_with_questions)
 
 
+    # Create sample datasets 
+    # Should only be runned once
+    sample_df_questions = df_questions.sample(400)
+
+    sample_df_annotations_without_questions = df_annotations_without_questions.sample(3333)
+    sample_df_none = df_none.sample(3333)
+
+    sample_df_annotations_without_questions_and_df_none = sample_df_annotations_without_questions.append(sample_df_none)
+    
+    # Write sample_df_questions
+    filename = "sample_question_sentences_mturk_no1.csv"
+    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
+    output_file = os.path.join('', *posts_path)
+    sample_df_questions.to_csv(output_file, sep=',', encoding='utf-8') 
+
+    # Write sample_df_annotations_without_questions_and_df_none
+    filename = "sample_annotations_without_questions_and_other_sentences_mturk_no1.csv"
+    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
+    output_file = os.path.join('', *posts_path)
+    sample_df_annotations_without_questions_and_df_none.to_csv(output_file, sep=',', encoding='utf-8') 
+
+    #print(len(sample_df_annotations_without_questions_and_df_none))
+
+
+
+
+
+
+
+
 
 
