@@ -10,8 +10,10 @@ from rfut.scripts.annotations_tagger import run as run_annotations_tagger
 from rfut.scripts.sampler_for_mturk_no1 import run as run_sampler_for_mturk_no1
 from rfut.scripts.pd_tools_dataframe_splitter import run as run_pd_tools_dataframe_splitter
 from rfut.scripts.test_bert_extractive_summarizer import run as run_test_bert_extractive_summarizer
+from rfut.scripts.get_datasets_for_summarization import run as run_get_datasets_for_summarization
+
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")
-    run_test_bert_extractive_summarizer()
+    run_get_datasets_for_summarization()
     print("--- %s seconds ---" % (time.time() - start_time))

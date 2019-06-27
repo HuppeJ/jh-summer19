@@ -12,7 +12,9 @@ class SentenceParser(object):
     def remove_special_characters(self, text):
         return re.sub(r"[^A-Za-z0-9(),!?@\'\`\"\_\n]", " " , text)
 
-    # TODO
+    def remove_quotes_symbols(sef, text):
+        return re.sub(r"[\'\`\"]", " " , text)
+
     def replace_at_symbols(self,text):
         return re.sub(r"@", "at" , text)
 
