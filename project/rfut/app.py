@@ -8,9 +8,10 @@ from rfut.scripts.get_synonyms import run as run_get_synonyms
 from rfut.scripts.remove_introduction_threads import run as run_remove_introduction_threads
 from rfut.scripts.annotations_tagger import run as run_annotations_tagger
 from rfut.scripts.sampler_for_mturk_no1 import run as run_sampler_for_mturk_no1
+from rfut.scripts.pd_tools_dataframe_splitter import run as run_pd_tools_dataframe_splitter
 
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")
-    run_sampler_for_mturk_no1()
+    run_pd_tools_dataframe_splitter()
     print("--- %s seconds ---" % (time.time() - start_time))
