@@ -9,9 +9,9 @@ from rfut.scripts.remove_introduction_threads import run as run_remove_introduct
 from rfut.scripts.annotations_tagger import run as run_annotations_tagger
 from rfut.scripts.sampler_for_mturk_no1 import run as run_sampler_for_mturk_no1
 from rfut.scripts.pd_tools_dataframe_splitter import run as run_pd_tools_dataframe_splitter
-
+from rfut.scripts.test_bert_extractive_summarizer import run as run_test_bert_extractive_summarizer
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")
-    run_pd_tools_dataframe_splitter()
+    run_test_bert_extractive_summarizer()
     print("--- %s seconds ---" % (time.time() - start_time))
