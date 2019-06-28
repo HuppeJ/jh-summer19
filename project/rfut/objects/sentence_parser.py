@@ -16,7 +16,7 @@ class SentenceParser(object):
         return re.sub(r"[\'\`\"]", " " , text)
 
     def replace_at_symbols(self,text):
-        return re.sub(r"@", "at" , text)
+        return re.sub(r"@", "" , text)
 
     def clean_text(self, text):
         cleanned_text = self.remove_links(text)

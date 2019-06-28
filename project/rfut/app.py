@@ -11,9 +11,11 @@ from rfut.scripts.sampler_for_mturk_no1 import run as run_sampler_for_mturk_no1
 from rfut.scripts.pd_tools_dataframe_splitter import run as run_pd_tools_dataframe_splitter
 from rfut.scripts.test_bert_extractive_summarizer import run as run_test_bert_extractive_summarizer
 from rfut.scripts.get_datasets_for_summarization import run as run_get_datasets_for_summarization
+from rfut.scripts.test_lexrank_summarizer_with_lexrank import run as run_test_lexrank_summarizer_with_lexrank
+from rfut.scripts.test_lexrank_summarizer_with_sumy import run as run_test_lexrank_summarizer_with_sumy
 
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")
-    run_get_datasets_for_summarization()
+    run_test_lexrank_summarizer_with_sumy()
     print("--- %s seconds ---" % (time.time() - start_time))
