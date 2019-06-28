@@ -13,9 +13,9 @@ from rfut.scripts.test_bert_extractive_summarizer import run as run_test_bert_ex
 from rfut.scripts.get_datasets_for_summarization import run as run_get_datasets_for_summarization
 from rfut.scripts.test_lexrank_summarizer_with_lexrank import run as run_test_lexrank_summarizer_with_lexrank
 from rfut.scripts.test_lexrank_summarizer_with_sumy import run as run_test_lexrank_summarizer_with_sumy
-
+from rfut.scripts.thread_summarizer import run as run_thread_summarizer
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")
-    run_test_lexrank_summarizer_with_sumy()
+    run_thread_summarizer()
     print("--- %s seconds ---" % (time.time() - start_time))
