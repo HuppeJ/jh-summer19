@@ -64,7 +64,7 @@ def run():
     filename = "parsed_0.02_of_threads_to_sentences_with_stats.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join('', *posts_path)
-    df_with_stats.to_csv(output_file, sep=',', encoding='utf-8')     
+    df_with_stats.to_csv(output_file, sep=',', encoding='utf-8', index=False)     
 
     # Write df_with_stats file sorted by nb_char
     df_with_stats_sorted_by_nb_char = df_with_stats.copy()
@@ -72,7 +72,7 @@ def run():
     filename = "parsed_0.02_of_threads_to_sentences_with_stats_sorted_by_nb_char.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join('', *posts_path)
-    df_with_stats_sorted_by_nb_char.to_csv(output_file, sep=',', encoding='utf-8')
+    df_with_stats_sorted_by_nb_char.to_csv(output_file, sep=',', encoding='utf-8', index=False)
 
     # Write df_with_stats file sorted by nb_words
     df_with_stats_sorted_by_nb_words= df_with_stats.copy()
@@ -80,7 +80,7 @@ def run():
     filename = "parsed_0.02_of_threads_to_sentences_with_stats_sorted_by_nb_words.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join('', *posts_path)
-    df_with_stats_sorted_by_nb_words.to_csv(output_file, sep=',', encoding='utf-8')
+    df_with_stats_sorted_by_nb_words.to_csv(output_file, sep=',', encoding='utf-8', index=False)
 
     # Remove all non desired sentences:
     # See function remove_sentence above
@@ -108,13 +108,13 @@ def run():
     filename = "parsed_0.02_of_threads_to_sentences_removed_sentences.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join('', *posts_path)
-    df_with_stats_removed_sentences.to_csv(output_file, sep=',', encoding='utf-8')
+    df_with_stats_removed_sentences.to_csv(output_file, sep=',', encoding='utf-8', index=False)
 
     # Write df_with_stats_kept_sentences file
     filename = "parsed_0.02_of_threads_to_sentences_kept_sentences.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join('', *posts_path)
-    df_with_stats_kept_sentences.to_csv(output_file, sep=',', encoding='utf-8')
+    df_with_stats_kept_sentences.to_csv(output_file, sep=',', encoding='utf-8', index=False)
     print("Finished")
 
 

@@ -52,4 +52,4 @@ def run():
     # Write output file
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "annotations", "annotations_with_synonyms.csv"]
     output_file = os.path.join('', *posts_path)
-    df_annotations_with_synonyms.to_csv(output_file, sep=',', encoding='utf-8')     
+    df_annotations_with_synonyms.to_csv(output_file, sep=',', encoding='utf-8', index=False)    

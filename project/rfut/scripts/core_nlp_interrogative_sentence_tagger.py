@@ -62,7 +62,7 @@ def run():
     filename = "parsed_0.02_kept_threads_with_is_question.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join('', *posts_path)
-    df_input.to_csv(output_file, sep=',', encoding='utf-8') 
+    df_input.to_csv(output_file, sep=',', encoding='utf-8', index=False)
     
 
 

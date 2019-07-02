@@ -61,7 +61,7 @@ def run():
     filename = "parsed_0.02_of_threads_to_sentences.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join('', *posts_path)
-    df_sentences.to_csv(output_file, sep=',', encoding='utf-8') 
+    df_sentences.to_csv(output_file, sep=',', encoding='utf-8', index=False) 
     
 
 

@@ -50,4 +50,4 @@ def run():
     filename = "threads_text_for_summarization_no1.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join("", *posts_path)
-    df_thread_text.to_csv(output_file, sep=",", encoding="utf-8") 
+    df_thread_text.to_csv(output_file, sep=",", encoding="utf-8", index=False) 

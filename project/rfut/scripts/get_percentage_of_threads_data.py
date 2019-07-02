@@ -69,7 +69,7 @@ def run():
     filename = str(percentage_of_threads_to_select) + "-of_threads_random_sample.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join('', *posts_path)
-    df_output.to_csv(output_file, sep=',', encoding='utf-8')     
+    df_output.to_csv(output_file, sep=',', encoding='utf-8', index=False)     
 
 
 

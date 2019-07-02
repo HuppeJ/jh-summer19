@@ -19,10 +19,10 @@ def run():
     filename = "sample_0_to_999_dataset_mturk_no1.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join('', *posts_path)
-    df_input_1.to_csv(output_file, sep=',', encoding='utf-8') 
+    df_input_1.to_csv(output_file, sep=',', encoding='utf-8', index=False) 
 
     # Write df_sample_dataset
     filename = "sample_1000_to_10500_dataset_mturk_no1.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join('', *posts_path)
-    df_input_2.to_csv(output_file, sep=',', encoding='utf-8') 
+    df_input_2.to_csv(output_file, sep=',', encoding='utf-8', index=False)

@@ -44,17 +44,17 @@ def run():
     filename = "all_question_sentences_mturk_no1.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join('', *posts_path)
-    df_questions.to_csv(output_file, sep=',', encoding='utf-8') 
+    df_questions.to_csv(output_file, sep=',', encoding='utf-8', index=False) 
 
     filename = "all_annotations_without_questions_sentences_mturk_no1.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join('', *posts_path)
-    df_annotations_without_questions.to_csv(output_file, sep=',', encoding='utf-8') 
+    df_annotations_without_questions.to_csv(output_file, sep=',', encoding='utf-8', index=False) 
 
     filename = "all_other_sentences_mturk_no1.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join('', *posts_path)
-    df_none.to_csv(output_file, sep=',', encoding='utf-8') 
+    df_none.to_csv(output_file, sep=',', encoding='utf-8', index=False)
 
     print("")
     print("Separate the dataset in three groups:")
