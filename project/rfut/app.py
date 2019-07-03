@@ -21,5 +21,5 @@ from rfut.scripts.thread_summary_rouge_scores import run as run_thread_summary_r
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")
-    run_thread_summarizer()
+    run_pd_tools_drop_column()
     print("--- %s seconds ---" % (time.time() - start_time))
