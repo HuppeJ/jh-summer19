@@ -37,7 +37,7 @@ from sumy.evaluation.rouge import rouge_l_sentence_level
 def run():
     print("Running : thread_summary_rouge_scores")
     summarization_technique = "lexrank"
-    score_technique = "rouge_2"
+    score_technique = "rouge_3"
     input_file_name = "threads_summarized_" + summarization_technique + ".csv"
   
     # Init tools 
@@ -49,7 +49,7 @@ def run():
     df_threads_summaries = pd.read_csv(input_file)
 
     # TODO REMOVE LINE BELOW
-    df_threads_summaries = df_threads_summaries[:2]
+    #df_threads_summaries = df_threads_summaries[:2]
 
     df_scores = df_threads_summaries[["thread_id"]].copy()
 
@@ -57,6 +57,10 @@ def run():
     max_nb_sentences = 10
     
     for row in df_threads_summaries.itertuples():
+        # See progress
+        if (row.Index % 100 == 0):
+            print(row.Index / len(df_threads_summaries))
+
         # Text data
         thread_text = str(df_threads_summaries.at[row.Index, "thread_text"])
         parsed_text = PlaintextParser.from_string(thread_text, Tokenizer("english"))
@@ -70,7 +74,7 @@ def run():
 
             # Score data
             # TODO: Change the score technique used
-            score = rouge_2(summary_sentences, parsed_text.document.sentences)
+            score = rouge_n(summary_sentences, parsed_text.document.sentences, 3)
 
 
             score_column = summarization_technique + "_" + str(nb_sentence) + "_sent" + "_" + score_technique

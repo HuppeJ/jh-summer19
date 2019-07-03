@@ -1,4 +1,6 @@
 from sumy.summarizers.lex_rank import LexRankSummarizer 
+from sumy.summarizers.text_rank import TextRankSummarizer  
+from sumy.summarizers.sum_basic import SumBasicSummarizer
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 
@@ -7,6 +9,8 @@ class SummarizerTool(object):
     
     def __init__(self):
         self.lexRankSummarizer = LexRankSummarizer()
+        self.textRankSummarizer = TextRankSummarizer()
+        self.sumBasicSummarizer = SumBasicSummarizer()
         pass
 
     def sentences_to_string(self, sentences):
