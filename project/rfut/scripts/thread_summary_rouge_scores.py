@@ -1,6 +1,7 @@
 # Imports
 import os
 import pandas as pd
+import numpy as np
 from rfut.common.constants import PROJECT_PATH, DATA_OUTPUT_PATH
 from sumy.summarizers.lex_rank import LexRankSummarizer 
 from sumy.parsers.plaintext import PlaintextParser
@@ -36,9 +37,12 @@ from sumy.evaluation.rouge import rouge_l_sentence_level
 
 def run():
     print("Running : thread_summary_rouge_scores")
-    summarization_technique = "lexrank"
-    score_technique = "rouge_3"
-    input_file_name = "threads_summarized_" + summarization_technique + ".csv"
+    summarization_technique = "sumbasic"
+    score_technique = "rouge_2"
+    min_nb_sentences = 1
+    max_nb_sentences = 25
+
+    input_file_name = "threads_summarized_" + summarization_technique + "_" + str(min_nb_sentences) + "_to_" + str(max_nb_sentences) + ".csv"
   
     # Init tools 
     summarizer_tool = SummarizerTool()
@@ -53,9 +57,6 @@ def run():
 
     df_scores = df_threads_summaries[["thread_id"]].copy()
 
-    min_nb_sentences = 2
-    max_nb_sentences = 10
-    
     for row in df_threads_summaries.itertuples():
         # See progress
         if (row.Index % 100 == 0):
@@ -71,18 +72,23 @@ def run():
             summary_text = str(df_threads_summaries.at[row.Index, summary_column])
             parsed_summary = PlaintextParser.from_string(summary_text, Tokenizer("english"))
             summary_sentences = parsed_summary.document.sentences
-
+            
+            #print(nb_sentence)
+            #print(summary_text)
+            #print(parsed_summary.document)
+            #print(summary_sentences)
+            
             # Score data
             # TODO: Change the score technique used
-            score = rouge_n(summary_sentences, parsed_text.document.sentences, 3)
-
-
+            if len(summary_sentences) > 0:
+                score = rouge_n(summary_sentences, parsed_text.document.sentences, 2)
+            else:
+                score = np.nan
             score_column = summarization_technique + "_" + str(nb_sentence) + "_sent" + "_" + score_technique
             df_scores.at[row.Index, score_column] = score
 
-
     # Write df_sample_dataset
-    filename = "threads_summarized_" + summarization_technique + "_" + score_technique + "_scores.csv"
+    filename = "threads_summarized_" + summarization_technique + "_" + score_technique + "_scores_" + str(min_nb_sentences) + "_to_" + str(max_nb_sentences) + ".csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join("", *posts_path)
     df_scores.to_csv(output_file, sep=",", encoding="utf-8", index=False) 

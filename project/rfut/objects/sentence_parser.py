@@ -9,11 +9,15 @@ class SentenceParser(object):
     def remove_links(self, text):
         return re.sub(r"https?://\S+", "" , text)
 
+    # Now the "." are kept 06/04/19
     def remove_special_characters(self, text):
-        return re.sub(r"[^A-Za-z0-9(),!?@\'\`\"\_\n]", " " , text)
+        return re.sub(r"[^A-Za-z0-9(),.!?@\'\`\"\_\n]", " " , text)
 
     def remove_quotes_symbols(sef, text):
         return re.sub(r"[\'\`\"]", " " , text)
+
+    def remove_parenthesis_symbols(sef, text):
+        return re.sub(r"[\(\)]", " " , text)
 
     def replace_at_symbols(self,text):
         return re.sub(r"@", "" , text)
