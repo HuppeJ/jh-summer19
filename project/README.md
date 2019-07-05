@@ -24,3 +24,8 @@ https://dev.to/codemouse92/dead-simple-python-classes-42f7
 
 - From the folder jh-summer19/project/ run in the anaconda prompt the command: 
 - ```python -m rfut```
+
+## Install packages on school computers "--user"
+
+- pip install --user sumy
+   
