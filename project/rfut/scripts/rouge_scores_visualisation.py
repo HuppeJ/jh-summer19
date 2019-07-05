@@ -22,7 +22,7 @@ def get_nb_sentences_key(summarization_technique, score_technique, min_nb_senten
 summarization_technique = "sumbasic"
 score_technique = "rouge_2"
 min_nb_sentences = 1
-max_nb_sentences = 25
+max_nb_sentences = 50
 input_file_name = "threads_summarized_" + summarization_technique + "_" + score_technique + "_scores_" + str(min_nb_sentences) + "_to_" + str(max_nb_sentences) + ".csv"
 
 threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, input_file_name]

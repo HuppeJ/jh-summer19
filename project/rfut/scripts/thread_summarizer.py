@@ -1,11 +1,24 @@
 # Imports
 import os
+import sys
 import pandas as pd
-from rfut.common.constants import PROJECT_PATH, DATA_OUTPUT_PATH
+import numpy as np
+from rfut.common.constants import PROJECT_PATH, DATA_OUTPUT_PATH, HUPPEJ_GENSIM_PROJECT_PATH
 from sumy.summarizers.lex_rank import LexRankSummarizer 
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from rfut.objects.summarizer_tool import SummarizerTool
+
+# Import local huppej_gensim project 
+# Note: Using insert to overwrite the original gensim package
+# https://stackoverflow.com/questions/43627020/import-forked-module-in-python-instead-of-installed-module
+# https://stackoverflow.com/questions/44070953/python-import-package-from-different-project
+# https://stackoverflow.com/questions/14509192/how-to-import-functions-from-other-projects-in-python
+sys.path.insert(0, os.path.abspath(HUPPEJ_GENSIM_PROJECT_PATH))
+
+from gensim.summarization.summarizer import summarize as gensim_textrank_summarize
+from gensim.summarization.summarizer import _format_results 
+#from huppej_gensim.gesim.summarization import keywords
 
 # Check list: 
 # [ - ]: Change name of variable summarization_technique
@@ -29,10 +42,16 @@ from rfut.objects.summarizer_tool import SummarizerTool
 # TextRank 
 # SumBasic 
 
+
+def get_n_best_extracted_sentences_text(extracted_sentences, nb_sentence):
+    n_best_extracted_sentences = extracted_sentences[:nb_sentence]
+    n_best_extracted_sentences.sort(key=lambda s: s.index)
+    return _format_results(n_best_extracted_sentences, True)
+
 def run():
     print("Running : thread_summarizer")
     
-    summarization_technique = "sumbasic"    
+    summarization_technique = "textrank"    
 
     # Init tools 
     summarizer_tool = SummarizerTool()
@@ -43,9 +62,9 @@ def run():
     df_threads_text = pd.read_csv(input_file)
     
     # TODO REMOVE LINE BELOW
-    #df_threads_text = df_threads_text[:50]
+    df_threads_text = df_threads_text[:1]
 
-    min_nb_sentences = 26
+    min_nb_sentences = 1
     max_nb_sentences = 50
     
     for row in df_threads_text.itertuples():
@@ -57,6 +76,14 @@ def run():
         thread_text = str(df_threads_text.at[row.Index, "thread_text"])
         parsed_text = PlaintextParser.from_string(thread_text, Tokenizer("english"))
 
+        if summarization_technique == "textrank":  
+            text = summarizer_tool.sentences_to_string(parsed_text.document.sentences)
+            try:
+                extracted_sentences = gensim_textrank_summarize(text, nb_sentences=max_nb_sentences, split=True) 
+            except Exception as e: 
+                print(e)
+                extracted_sentences = np.nan
+        
         for nb_sentence in range(min_nb_sentences, max_nb_sentences + 1):
             # Summary data
             # TODO: Change the summarizer
@@ -65,8 +92,12 @@ def run():
             elif summarization_technique == "lexrank":  
                 summary_sentences = summarizer_tool.lexRankSummarizer(parsed_text.document, nb_sentence)
             elif summarization_technique == "textrank":  
-                summary_sentences = summarizer_tool.textRankSummarizer(parsed_text.document, nb_sentence)
-
+                # summary_sentences = summarizer_tool.textRankSummarizer(parsed_text.document, nb_sentence)
+                if extracted_sentences is not np.nan:
+                    summary_sentences = get_n_best_extracted_sentences_text(extracted_sentences, nb_sentence)
+                else:
+                    summary_sentences = ""
+                    
             summary_string = summarizer_tool.sentences_to_string(summary_sentences)
             colum_name = summarization_technique + "_" + str(nb_sentence) + "_sent"
             df_threads_text.at[row.Index, colum_name] = summary_string
