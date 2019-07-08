@@ -39,8 +39,13 @@ from gensim.summarization.summarizer import _format_results
 #
 # When the text was separated by sentences for 1600 threads
 # LexRank:
-# TextRank 
-# SumBasic 
+# TextRank: --- 105621.08 seconds ---  ~30h
+# SumBasic: 
+
+# Important Note: 
+# LexRank uses sumy
+# TextRank uses sumy
+# SumBasic uses modified algo of Gensim
 
 
 def get_n_best_extracted_sentences_text(extracted_sentences, nb_sentence):
@@ -57,12 +62,12 @@ def run():
     summarizer_tool = SummarizerTool()
 
     # Load thread text data in dataframe
-    thread_text_file = [PROJECT_PATH, DATA_OUTPUT_PATH, "threads_text_for_summarization_no1.csv"]
+    thread_text_file = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "threads_text_for_summarization_no1.csv"]
     input_file = os.path.join("", *thread_text_file)
     df_threads_text = pd.read_csv(input_file)
     
     # TODO REMOVE LINE BELOW
-    df_threads_text = df_threads_text[:1]
+    #df_threads_text = df_threads_text[:1]
 
     min_nb_sentences = 1
     max_nb_sentences = 50
@@ -113,7 +118,7 @@ def run():
     df_threads_text = df_threads_text.drop(["thread_text"], axis=1)
 
     filename_without_text = filename + "_no_text.csv"
-    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename_without_text]
+    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "sentences", filename_without_text]
     output_file = os.path.join("", *posts_path)
     df_threads_text.to_csv(output_file, sep=",", encoding="utf-8", index=False) 
 

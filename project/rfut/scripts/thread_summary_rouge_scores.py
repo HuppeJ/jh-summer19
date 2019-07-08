@@ -48,7 +48,7 @@ def run():
     summarizer_tool = SummarizerTool()
 
     # Load thread text data in dataframe
-    thread_text_file = [PROJECT_PATH, DATA_OUTPUT_PATH, input_file_name]
+    thread_text_file = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "sentences", input_file_name]
     input_file = os.path.join("", *thread_text_file)
     df_threads_summaries = pd.read_csv(input_file)
 
@@ -89,6 +89,6 @@ def run():
 
     # Write df_sample_dataset
     filename = "threads_summarized_" + summarization_technique + "_" + score_technique + "_scores_" + str(min_nb_sentences) + "_to_" + str(max_nb_sentences) + ".csv"
-    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
+    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "sentences", filename]
     output_file = os.path.join("", *posts_path)
     df_scores.to_csv(output_file, sep=",", encoding="utf-8", index=False) 
