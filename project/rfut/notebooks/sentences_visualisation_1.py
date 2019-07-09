@@ -11,9 +11,9 @@ from rfut.objects.thread_analyser import ThreadAnalyzer
 from rfut.objects.sentence_parser import SentenceParser
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
-#from scipy import stats
-#import statsmodels.api as sm
-#from statsmodels.formula.api import ols
+from scipy import stats
+import statsmodels.api as sm
+from statsmodels.formula.api import ols
 
 # Init tools 
 ta = ThreadAnalyzer()
@@ -92,13 +92,47 @@ ax.boxplot([dataset_mturk_no1,threads_summarized_lexrank], notch = True, labels=
 #ax.set(ylim=(0, 50))
 
 #%% 
-#F, p = stats.f_oneway(dataset_mturk_no1, threads_summarized_lexrank)
 
-#mod = ols('weight ~ group',
-#                data=data).fit()
-                
-#aov_table = sm.stats.anova_lm(mod, typ=2)
-#print aov_table
+# Statistic tests to find if there is a significant relation 
+x1 = df_stats["avg_len_of_sent_in_dataset_mturk_no1"]
+x2 = df_stats["avg_len_of_sent_in_df_threads_summarized_lexrank"]
+print("T-test using scipy:")
+# https://machinelearningmastery.com/parametric-statistical-significance-tests-in-python/
+t, p = stats.ttest_ind(x1, x2)
+print("t = " + str(t))
+print("p = " + str(p))
+# interpret
+alpha = 0.05
+if p > alpha:
+	print('Same distributions (fail to reject H0)')
+else:
+	print('Different distributions (reject H0)')
+
+
+# The code is good I think there is a problem with the jupyter environnement 
+# Maybe the solution would be to uninstall statsmodel and reinstall it with "pip install statsmodel"
+tstat, pvalue, df = sm.stats.weightstats.ttest_ind(x1, x2)
+# interpret
+alpha = 0.05
+if pvalue > alpha:
+	print('Same distributions (fail to reject H0)')
+else:
+	print('Different distributions (reject H0)')
+
+
+print("")
+print("Anova test using scipy:")
+F, p = stats.f_oneway(df_stats["avg_len_of_sent_in_dataset_mturk_no1"], df_stats["avg_len_of_sent_in_df_threads_summarized_lexrank"])
+print("F-statistic:", F)
+print("p-value:", p)
+
+print("")
+print("Anova test using statsmodel:")
+results  = ols('avg_len_of_sent_in_df_threads_summarized_lexrank~avg_len_of_sent_in_dataset_mturk_no1', data=df_stats).fit()
+#result = ols(df_stats["avg_len_of_sent_in_dataset_mturk_no1"], df_stats["avg_len_of_sent_in_df_threads_summarized_lexrank"])
+#results.summary()       
+
+
 #%%
 # Summary of threads that have at least one sentence in dataset mturk no1
 

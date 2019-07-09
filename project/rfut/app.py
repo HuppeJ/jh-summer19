@@ -1,7 +1,7 @@
 import time 
 
 from rfut.scripts.core_nlp_interrogative_sentence_tagger import run as run_core_nlp_interrogative_sentence_tagger
-from rfut.scripts.get_percentage_of_threads_data import run as run_get_percentage_of_threads_data
+from rfut.scripts.dataset_builder_get_percentage_of_threads_data import run as run_dataset_builder_get_percentage_of_threads_data
 from rfut.scripts.parse_posts_to_sentences import run as run_parse_posts_to_sentences
 from rfut.scripts.remove_short_messages import run as run_remove_short_messages
 from rfut.scripts.get_synonyms import run as run_get_synonyms
@@ -17,9 +17,10 @@ from rfut.scripts.pd_tools_drop_column import run as run_pd_tools_drop_column
 from rfut.scripts.thread_lexrank_summarizer_20_sent import run as run_thread_summarizer_20_sent
 from rfut.scripts.thread_summarizer import run as run_thread_summarizer
 from rfut.scripts.thread_summary_rouge_scores import run as run_thread_summary_rouge_scores
+from rfut.scripts.dataset_builder_posts_to_sentences import run as run_dataset_builder_posts_to_sentences
 
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")
-    run_thread_summarizer()
+    run_dataset_builder_posts_to_sentences()
     print("--- %s seconds ---" % (time.time() - start_time))

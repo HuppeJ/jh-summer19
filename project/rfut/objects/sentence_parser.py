@@ -11,7 +11,7 @@ class SentenceParser(object):
 
     # Now the "." are kept 06/04/19
     def remove_special_characters(self, text):
-        return re.sub(r"[^A-Za-z0-9(),.!?@\'\`\"\_\n]", " " , text)
+        return re.sub(r"[^A-Za-z0-9,.!?\n]", " " , text)
 
     def remove_quotes_symbols(sef, text):
         return re.sub(r"[\'\`\"]", " " , text)
@@ -25,7 +25,7 @@ class SentenceParser(object):
     def clean_text(self, text):
         cleanned_text = self.remove_links(text)
         cleanned_text = self.remove_special_characters(cleanned_text)
-        cleanned_text = self.replace_at_symbols(cleanned_text)
+        # CoreNLP needs caps for identifying interrogative sentences
         # cleanned_text = cleanned_text.lower()
         return cleanned_text
 

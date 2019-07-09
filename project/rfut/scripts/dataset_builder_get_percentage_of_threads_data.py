@@ -16,7 +16,7 @@ import math
 from rfut.common.constants import DIABETES_DATA_PATH, SUBORUMS_DATA_PATH, POSTS_DATA_PATH, PROJECT_PATH, DATA_OUTPUT_PATH
 
 def run():
-    print("Running : get_percentage_of_threads_data")
+    print("Running : dataset_builder_get_percentage_of_threads_data")
 
     # Load subforum data in dataframe
     subforum_path = [DIABETES_DATA_PATH, SUBORUMS_DATA_PATH, "subforum_updated_classified.csv"]
