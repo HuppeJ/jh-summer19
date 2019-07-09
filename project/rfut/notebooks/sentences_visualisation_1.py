@@ -95,7 +95,7 @@ ax.boxplot([dataset_mturk_no1,threads_summarized_lexrank], notch = True, labels=
 #F, p = stats.f_oneway(dataset_mturk_no1, threads_summarized_lexrank)
 
 #mod = ols('weight ~ group',
-                data=data).fit()
+#                data=data).fit()
                 
 #aov_table = sm.stats.anova_lm(mod, typ=2)
 #print aov_table
