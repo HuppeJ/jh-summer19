@@ -59,7 +59,7 @@ def run():
                     nb_threads_to_select = math.floor(percentage_of_threads_to_select * nb_threads)
                     sample = df_input_copy.sample(nb_threads_to_select)
                     thread_id_sample_list = sample[POST_THREAD_ID_COLUMN].tolist()
-                    # add tag to posts to which sunforum
+                    # add tag to posts to which subforum
                     df_sample = df_input.loc[df_input[POST_THREAD_ID_COLUMN].isin(thread_id_sample_list)]
                     df_sample[POST_SUBFORUM_NUMBER] = subforum_num
                     df_output = df_output.append(df_sample)

@@ -1,14 +1,8 @@
 ### Algorithm: 
 
-# - 1. Load subforums data
-# - 2. Get the selected subforums
-# - 3. For each posts data of the selected subforums:
-#   - 3.1 Remove duplicated thread_id
-#   - 3.2 Select x% of the new column with no duplicated thread_id
-#   - 3.3 Select all the post matching the selected thread_ids
-#   - 3.4 Add the colum subforum_number to each post 
-#   - 3.5 Append the new rows to the output dataframe
-# - 4. Write the output dataframe in .csv file
+# - 1. For all the selected subforum (all i.csv selected (see subforum_updated_classified.csv)):
+# - 1.1 Parse all the posts in the file i.csv to sentences
+# - 1.2 Write the new dataset which contains all the data of the i.csv file, but in sentence format instead of post format
 
 import os
 import pandas as pd
@@ -44,7 +38,7 @@ def run():
     print("selected_subforums", selected_subforums)
 
     # TODO: to comment
-    selected_subforums = [1]
+    #selected_subforums = [1]
 
     posts_path = [DIABETES_DATA_PATH, POSTS_DATA_PATH]
     posts_directory = os.path.join('', *posts_path)
@@ -61,8 +55,8 @@ def run():
                     df_sentences = posts_to_sentences(sp, df_input_copy)
                         
                     filename = str(subforum_num) + "_posts_to_sentences.csv"
-                    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "posts_to_sentences", filename]
-                    output_file = os.path.join('', *posts_path)
+                    output_file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "posts_to_sentences", filename]
+                    output_file = os.path.join('', *output_file_path)
                     df_sentences.to_csv(output_file, sep=',', encoding='utf-8', index=False)   
 
 
