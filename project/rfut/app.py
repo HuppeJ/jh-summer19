@@ -18,9 +18,11 @@ from rfut.scripts.thread_lexrank_summarizer_20_sent import run as run_thread_sum
 from rfut.scripts.thread_summarizer import run as run_thread_summarizer
 from rfut.scripts.thread_summary_rouge_scores import run as run_thread_summary_rouge_scores
 from rfut.scripts.dataset_builder_posts_to_sentences import run as run_dataset_builder_posts_to_sentences
+from rfut.scripts.dataset_builder_first_posts import run as run_dataset_builder_first_posts
+from rfut.scripts.dataset_builder_add_subforum_number_to_i_csv_files import run as run_dataset_builder_add_subforum_number_to_i_csv_files
 
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")
-    run_dataset_builder_posts_to_sentences()
+    run_dataset_builder_add_subforum_number_to_i_csv_files()
     print("--- %s seconds ---" % (time.time() - start_time))
