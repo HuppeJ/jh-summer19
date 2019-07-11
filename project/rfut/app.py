@@ -24,5 +24,5 @@ from rfut.scripts.dataset_builder_add_subforum_number_to_i_csv_files import run 
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")
-    run_dataset_builder_add_subforum_number_to_i_csv_files()
+    run_parse_posts_to_sentences()
     print("--- %s seconds ---" % (time.time() - start_time))

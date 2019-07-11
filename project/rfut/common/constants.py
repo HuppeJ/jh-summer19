@@ -10,3 +10,5 @@ POSTS_DATA_PATH = r"posts_data\data"
 SUBORUMS_DATA_PATH = r"subforums_data\data"
 
 SCRIPT_TO_DATA_OUTPUT_PATH = r"../data_output"
+
+IMG_OUTPUT_PATH = r"rfut\images"
