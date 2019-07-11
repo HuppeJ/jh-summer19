@@ -50,7 +50,7 @@ def run():
     df_input["core_nlp_clause_tag"] = 0
 
     # Second run and more of the program
-    #threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "parsed_0.02_kept_threads_with_corenlp_clause_tags.csv"]
+    #threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "parsed_0.02_kept_threads_with_core_nlp_clause_tags.csv"]
     #input_file = os.path.join('', *threads_sample_path)
     #df_input = pd.read_csv(input_file)
 
@@ -69,6 +69,11 @@ def run():
     
     # Second and more run of the program
     for row in df_input_sample.itertuples():
+        # Log progress
+        if (row.Index % 100 == 0):
+            progress = (row.Index / len(df_input_sample)) * 100
+            print(round(progress), r"% done.")
+            
         sentence = str(df_input_sample.at[row.Index, "sentence"])
         try:
             t_iterator = parser.raw_parse(sentence)
@@ -93,7 +98,7 @@ def run():
      
 
     # Write output file
-    filename = "parsed_0.02_kept_threads_with_corenlp_clause_tags.csv"
+    filename = "parsed_0.02_kept_threads_with_core_nlp_clause_tags.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join('', *posts_path)
     df_input.to_csv(output_file, sep=',', encoding='utf-8', index=False)
