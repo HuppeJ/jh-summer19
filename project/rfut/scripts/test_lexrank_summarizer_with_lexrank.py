@@ -1,5 +1,5 @@
 # Imports
-from lexrank import STOPWORDS, LexRank
+#from lexrank import STOPWORDS, LexRank
 from path import Path
 
 # Package from: lexrank 0.1.0: https://pypi.org/project/lexrank/

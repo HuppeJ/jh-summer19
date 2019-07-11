@@ -6,7 +6,7 @@ import pandas as pd
 from nltk import sent_tokenize
 from rfut.common.constants import PROJECT_PATH, DATA_OUTPUT_PATH
 from rfut.objects.sentence_parser import SentenceParser 
-from summarizer import SingleModel
+#from summarizer import SingleModel
 
 # Package from: bert-extractive-summarizer 0.1.4: https://pypi.org/project/bert-extractive-summarizer/
 # Github: https://github.com/dmmiller612/bert-extractive-summarizer
