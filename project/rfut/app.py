@@ -21,6 +21,8 @@ from rfut.scripts.dataset_builder_posts_to_sentences import run as run_dataset_b
 from rfut.scripts.dataset_builder_first_posts import run as run_dataset_builder_first_posts
 from rfut.scripts.dataset_builder_add_subforum_number_to_i_csv_files import run as run_dataset_builder_add_subforum_number_to_i_csv_files
 from rfut.scripts.core_nlp_clause_tags_to_is_question import run as run_core_nlp_clause_tags_to_is_question
+from rfut.scripts.update_mturk_sample import run as run_update_mturk_sample
+
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")

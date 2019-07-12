@@ -77,6 +77,17 @@ def run():
 
     # Create sample datasets 
     # Should only be runned once
+    
+    # Had to reselect from the same selected thread_ids to be consistant with the summarization
+    #file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "sample_dataset_mturk_no11.csv"]
+    #input_file = os.path.join('', *file_path)
+    #df_mturk = pd.read_csv(input_file)
+
+    #thread_ids = df_mturk["thread_id"].tolist()
+    # Remove duplicates
+    #thread_ids = list(dict.fromkeys(thread_ids))
+    #df_questions = df_questions.loc[df_questions["thread_id"].isin(thread_ids)]
+
     sample_df_questions = df_questions.sample(3500)
     sample_df_annotations_without_questions = df_annotations_without_questions.sample(3500)
     sample_df_none = df_none.sample(3500)
@@ -87,7 +98,7 @@ def run():
     print(len(df_sample_dataset))
 
     # Write df_sample_dataset
-    filename = "[no_overwrite]sample_dataset_mturk_no1.csv"
+    filename = "[No_overwrite]sample_dataset_mturk_no1.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join('', *posts_path)
     df_sample_dataset.to_csv(output_file, sep=',', encoding='utf-8') 
