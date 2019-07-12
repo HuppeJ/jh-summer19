@@ -77,19 +77,17 @@ def run():
 
     # Create sample datasets 
     # Should only be runned once
-    #sample_df_questions = df_questions.sample(3500)
+    sample_df_questions = df_questions.sample(3500)
+    sample_df_annotations_without_questions = df_annotations_without_questions.sample(3500)
+    sample_df_none = df_none.sample(3500)
 
-    #sample_df_annotations_without_questions = df_annotations_without_questions.sample(3500)
-    #sample_df_none = df_none.sample(3500)
-
-    #sample_df_annotations_without_questions_and_df_none = sample_df_annotations_without_questions.append(sample_df_none)
-
-    #df_sample_dataset = sample_df_annotations_without_questions_and_df_none.append(sample_df_questions)
-    #print("ICI")
-    #print(len(df_sample_dataset))
+    sample_df_annotations_without_questions_and_df_none = sample_df_annotations_without_questions.append(sample_df_none)
+    df_sample_dataset = sample_df_annotations_without_questions_and_df_none.append(sample_df_questions)
+    print("ICI")
+    print(len(df_sample_dataset))
 
     # Write df_sample_dataset
-    #filename = "[No_Overwrite]_sample_dataset_mturk_no1.csv"
-    #posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
-    #output_file = os.path.join('', *posts_path)
-    #df_sample_dataset.to_csv(output_file, sep=',', encoding='utf-8') 
+    filename = "[no_overwrite]sample_dataset_mturk_no1.csv"
+    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
+    output_file = os.path.join('', *posts_path)
+    df_sample_dataset.to_csv(output_file, sep=',', encoding='utf-8') 

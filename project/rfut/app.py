@@ -20,9 +20,9 @@ from rfut.scripts.thread_summary_rouge_scores import run as run_thread_summary_r
 from rfut.scripts.dataset_builder_posts_to_sentences import run as run_dataset_builder_posts_to_sentences
 from rfut.scripts.dataset_builder_first_posts import run as run_dataset_builder_first_posts
 from rfut.scripts.dataset_builder_add_subforum_number_to_i_csv_files import run as run_dataset_builder_add_subforum_number_to_i_csv_files
-
+from rfut.scripts.core_nlp_clause_tags_to_is_question import run as run_core_nlp_clause_tags_to_is_question
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")
-    run_parse_posts_to_sentences()
+    run_sampler_for_mturk_no1()
     print("--- %s seconds ---" % (time.time() - start_time))
