@@ -72,16 +72,16 @@ def run():
     sp = SentenceParser()
 
     # Load sample of threads data in dataframe
-    threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "0.02-of_threads_random_sample.csv"]
-    input_file = os.path.join('', *threads_sample_path)
+    file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "0.02-of_threads_random_sample.csv"]
+    input_file = os.path.join('', *file_path)
     df_input = pd.read_csv(input_file)
 
     df_sentences = posts_to_sentences(sp, df_input)
 
     # Write output file
     filename = "parsed_0.02_of_threads_to_sentences.csv"
-    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
-    output_file = os.path.join('', *posts_path)
+    output_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
+    output_file = os.path.join('', *output_path)
     df_sentences.to_csv(output_file, sep=',', encoding='utf-8', index=False) 
     
 

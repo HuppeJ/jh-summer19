@@ -35,8 +35,14 @@ Which gave us the two files below:
 
 ## 7. parsed_0.02_of_threads_removed_threads.csv
 
-Tagged sentences of parsed_0.02_of_threads_kept_threads.csv with is_question with core_nlp parser which gave us:
+Tagged sentences of parsed_0.02_of_threads_kept_threads.csv with core_nlp_clause_tag with core_nlp parser which gave us:
 (see core_nlp_interrogative_sentence_tagger.py)
+Which gave us the file below:
+
+## 7.1 parsed_0.02_kept_threads_with_core_nlp_clause_tags.csv
+
+Tagged sentences of parsed_0.02_kept_threads_with_core_nlp_clause_tags.csv with is_question based on the core_nlp_clause_tags:
+(see core_nlp_clause_tags_to_is_question.py)
 Which gave us the file below:
   
 ## 8. parsed_0.02_kept_threads_with_is_question.csv
