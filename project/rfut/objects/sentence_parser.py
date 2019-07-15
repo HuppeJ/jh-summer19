@@ -11,8 +11,8 @@ class SentenceParser(object):
 
     # Now the "." are kept 06/04/19
     def remove_special_characters(self, text):
-        return re.sub(r"[^A-Za-z0-9,.!?\n]", " " , text)
-
+        return re.sub(r"[^A-Za-z0-9(),.!\\?\'\`\"\_\n\/#$%&*+\-:;<=>@\[\]^_{|}~]", " " , text)
+            
     def remove_quotes_symbols(sef, text):
         return re.sub(r"[\'\`\"]", " " , text)
 
