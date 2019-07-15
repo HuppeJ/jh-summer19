@@ -78,22 +78,12 @@ def run():
     # Create sample datasets 
     # Should only be runned once
     
-    # Had to reselect from the same selected thread_ids to be consistant with the summarization
-    #file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "sample_dataset_mturk_no11.csv"]
-    #input_file = os.path.join('', *file_path)
-    #df_mturk = pd.read_csv(input_file)
-
-    #thread_ids = df_mturk["thread_id"].tolist()
-    # Remove duplicates
-    #thread_ids = list(dict.fromkeys(thread_ids))
-    #df_questions = df_questions.loc[df_questions["thread_id"].isin(thread_ids)]
-
     sample_df_questions = df_questions.sample(3500)
     sample_df_annotations_without_questions = df_annotations_without_questions.sample(3500)
     sample_df_none = df_none.sample(3500)
 
     sample_df_annotations_without_questions_and_df_none = sample_df_annotations_without_questions.append(sample_df_none)
-    df_sample_dataset = sample_df_annotations_without_questions_and_df_none.append(sample_df_questions)
+    df_sample_dataset = sample_df_annotations_without_questions_and_df_none.append(sample_df_questions)    
     print("ICI")
     print(len(df_sample_dataset))
 
