@@ -4,10 +4,13 @@
 # - 2. Split post_messageText into sentences
 # - 3. Clean sentences text
 #   - 3.1 Remove links "https?://\S+"
-#   - 3.2 Only keep characters matching "[^A-Za-z0-9(),!?@\'\`\"\_\n]"
+#   - 3.2 Only keep characters matching "[A-Za-z0-9(),.!\\?\'\`\"\_\n\/#$%&*+\-:;<=>@\[\]^_{|}~]"
 # - 4. Export the dataframe with all the sentence
-#       - The dataframe contains the extra info listed below:
+#       - The dataframe contains the extra info listed below and more:
 #           ["thread_id", "thread_title", "thread_author", "post_number", "subforum_number", "sentence_number", "sentence"]
+
+# Time
+# --- 1583.164433002472 seconds ---
 
 # Imports
 import csv
@@ -20,7 +23,8 @@ from rfut.common.constants import PROJECT_PATH, DATA_OUTPUT_PATH
 from rfut.objects.sentence_parser import SentenceParser 
 
 def posts_to_sentences(sp, df_input):
-    df_sentences = pd.DataFrame(columns=["thread_id", "thread_title", "thread_author", "post_number", "subforum_number", "sentence_number", "sentence"])
+    df_sentences = pd.DataFrame(columns=["thread_id", "thread_title", "thread_link", "thread_author", "thread_replies", "thread_views", 
+                                "post_number", "post_like", "subforum_number", "sentence_number", "sentence"])
 
     for row in df_input.itertuples():
         subforum_number = df_input.at[row.Index, "subforum_number"]
