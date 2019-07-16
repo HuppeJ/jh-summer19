@@ -78,7 +78,7 @@ The dataset sample_dataset_mturk_no1.csv has been split into two datasets:
 - **The text in the first group ("post") groups the text post by post, so when applying summarization techniques we get the best posts**
 - **The text in the second group ("sent") groups the text sentence by sentence, so when applying summarization techniques we get the best sentences**
 
-**First group ("post")**
+**First group ("post") with mturk no.1**
 
 - **Note: all the files in the first group have summaries of 2 to 10 posts**
   
@@ -96,16 +96,16 @@ Based on threads_text_for_summarization_post_no1.csv the thread text has been su
 - Based on threads_text_for_summarization_post_no1.csv the thread text has been summarized using lexrank, sumbasic and textrank: 
 - (see thread_summarizer.py)
 
-## 14 threads_post_summarized_lexrank.csv, threads_post_summarized_sumbasic.csv & threads_post_summarized_textrank.csv
+## 14. threads_post_summarized_lexrank.csv, threads_post_summarized_sumbasic.csv & threads_post_summarized_textrank.csv
 
 - Based on threads_post_summarized_X.csv files the rouge-2 and rouge-3 scores has been calculated:
 - (see thread_summary_rouge_scores.py) 
 
-## 15 threads_post_summarized_lexrank_rouge_2_scores.csv, threads_post_summarized_sumbasic_rouge_2_scores.csv & threads_post_summarized_textrank_rouge_2_scores.csv
+## 15. threads_post_summarized_lexrank_rouge_2_scores.csv, threads_post_summarized_sumbasic_rouge_2_scores.csv & threads_post_summarized_textrank_rouge_2_scores.csv
 
-## 16 threads_post_summarized_lexrank_rouge_3_scores.csv, threads_post_summarized_sumbasic_rouge_3_scores.csv & threads_post_summarized_textrank_rouge_3_scores.csv
+## 16. threads_post_summarized_lexrank_rouge_3_scores.csv, threads_post_summarized_sumbasic_rouge_3_scores.csv & threads_post_summarized_textrank_rouge_3_scores.csv
 
-**Second group ("sent") [Good one]**
+**Second group ("sent") with mturk no.1**
 
 For each thread_ids selected in the sample_dataset_mturk_no1.csv we retrieved all the thread conversation from 0.02-of_threads_random_sample.csv.
 (see get_datasets_for_summarization.py)
@@ -128,28 +128,43 @@ For clarity reason we removed the thread_text property in the files above so tha
 (see pd_tools_drop_column.py)
 Which gave us the files below:
 
-## 19 threads_summarized_lexrank_1_to_50_no_text.csv, threads_summarized_sumbasic_1_to_50_no_text.csv & threads_summarized_textrank_1_to_50_no_text.csv
+## 19. threads_summarized_lexrank_1_to_50_no_text.csv, threads_summarized_sumbasic_1_to_50_no_text.csv & threads_summarized_textrank_1_to_50_no_text.csv
 
 Based on threads_summarized_X_1_to_50.csv files the rouge-1, rouge-2, rouge-3 and rouge-4 scores has been calculated:
 (see thread_summary_rouge_scores.py) 
 Which gave us the files below:
 
-## 20 threads_summarized_lexrank_rouge_1_scores_1_to_50.csv, threads_summarized_sumbasic_rouge_1_scores_1_to_50.csv & threads_summarized_textrank_rouge_1_scores_1_to_50.csv
+## 20. threads_summarized_lexrank_rouge_1_scores_1_to_50.csv, threads_summarized_sumbasic_rouge_1_scores_1_to_50.csv & threads_summarized_textrank_rouge_1_scores_1_to_50.csv
 
-## 21 threads_summarized_lexrank_rouge_2_scores_1_to_50.csv, threads_summarized_sumbasic_rouge_2_scores_1_to_50.csv & threads_summarized_textrank_rouge_2_scores_1_to_50.csv
+## 21. threads_summarized_lexrank_rouge_2_scores_1_to_50.csv, threads_summarized_sumbasic_rouge_2_scores_1_to_50.csv & threads_summarized_textrank_rouge_2_scores_1_to_50.csv
 
-## 22 threads_summarized_lexrank_rouge_3_scores_1_to_50.csv, threads_summarized_sumbasic_rouge_3_scores_1_to_50.csv & threads_summarized_textrank_rouge_3_scores_1_to_50.csv
+## 22. threads_summarized_lexrank_rouge_3_scores_1_to_50.csv, threads_summarized_sumbasic_rouge_3_scores_1_to_50.csv & threads_summarized_textrank_rouge_3_scores_1_to_50.csv
 
-## 23 threads_summarized_lexrank_rouge_4_scores_1_to_50.csv, threads_summarized_sumbasic_rouge_4_scores_1_to_50.csv & threads_summarized_textrank_rouge_4_scores_1_to_50.csv
+## 23. threads_summarized_lexrank_rouge_4_scores_1_to_50.csv, threads_summarized_sumbasic_rouge_4_scores_1_to_50.csv & threads_summarized_textrank_rouge_4_scores_1_to_50.csv
 
 The TextRank summarization algorithm of sumy has also been ran. 
 (see thread_summarizer.py)
 Which gave us the files below:
 
-## 24 threads_summarized_textrank_sumy_1_to_50.csv & threads_summarized_textrank_sumy_1_to_50_no_text.csv
+## 24. threads_summarized_textrank_sumy_1_to_50.csv & threads_summarized_textrank_sumy_1_to_50_no_text.csv
 
 Based on threads_summarized_textrank_sumy_1_to_50.csv files the rouge-2 and rouge-3 scores has been calculated:
 (see thread_summary_rouge_scores.py) 
 Which gave us the files below:
 
-## threads_summarized_textrank_sumy_rouge_2_scores_1_to_50.csv & threads_summarized_textrank_sumy_rouge_3_scores_1_to_50.csv
+## 25. threads_summarized_textrank_sumy_rouge_2_scores_1_to_50.csv & threads_summarized_textrank_sumy_rouge_3_scores_1_to_50.csv
+
+[ Important note ]: All the files enumerated from number 2. to number 10. are the datasets needed to create sample_dataset_mturk_no1. The sample dataset for mturk no1 has never been submitted to mturk there was a little "bug" in it (the period characters were removed). To solve this problem all the script to create those files has been reran with a different parsing of the sentences (see functions clean_text and remove_special_characters in sentence_parser.py). Rerunning all those script gave us all the same files detailed above, but for sample_dataset_mturk_no2. Those file are going to be grouped under # 26. Datasets for sample_dataset_mturk_no2.
+
+## 26. Datasets for sample_dataset_mturk_no2
+
+For each thread_ids selected in the sample_dataset_mturk_no2.csv we retrieved all the thread conversation from 0.02-of_threads_random_sample.csv.
+(get_datasets_for_summarization.py)
+Which gave us the file below:
+
+## 27. threads_text_for_summarization_no2.csv
+
+For each thread we summarized the hole thread conversation (thread_text in threads_text_for_summarization_no2.csv) for 20 sentences.
+Which gave us the file below:
+
+## 28. threads_summarized_lexrank_20_to_20.csv
