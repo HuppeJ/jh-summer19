@@ -26,5 +26,5 @@ from rfut.scripts.update_mturk_sample import run as run_update_mturk_sample
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")
-    run_sampler_for_mturk_no1()
+    run_thread_summarizer()
     print("--- %s seconds ---" % (time.time() - start_time))

@@ -13,7 +13,7 @@ def run():
     sp = SentenceParser()
 
     # Load sample of sentences data in dataframe
-    mturk_sentences_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "sample_dataset_mturk_no1.csv"]
+    mturk_sentences_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "sample_dataset_mturk_no2.csv"]
     input_file = os.path.join("", *mturk_sentences_sample_path)
     df_mturk_sentences = pd.read_csv(input_file)
 
@@ -36,10 +36,10 @@ def run():
         for row in df_temp.itertuples():
             post_message = str(df_temp.at[row.Index, "post_messageText"])
             post_message = sp.clean_text(post_message)
-            post_message = sp.remove_quotes_symbols(post_message)
+            #post_message = sp.remove_quotes_symbols(post_message)
             parsed_post_message = "\n " + post_message
             thread_text += parsed_post_message
-        parsed_thread_text = "\"" + thread_text[2:] + "\""
+        parsed_thread_text = thread_text[2:]
         for row in df_thread_text.itertuples():
             t_id = df_thread_text.at[row.Index, "thread_id"]
             if(t_id == thread_id):
@@ -47,7 +47,7 @@ def run():
 
 
     # Write df_sample_dataset
-    filename = "threads_text_for_summarization_no1.csv"
+    filename = "threads_text_for_summarization_no2.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join("", *posts_path)
     df_thread_text.to_csv(output_file, sep=",", encoding="utf-8", index=False) 

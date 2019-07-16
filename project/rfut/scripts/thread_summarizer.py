@@ -20,12 +20,6 @@ from gensim.summarization.summarizer import summarize as gensim_textrank_summari
 from gensim.summarization.summarizer import _format_results 
 #from huppej_gensim.gesim.summarization import keywords
 
-# Check list: 
-# [ - ]: Change name of variable summarization_technique
-# [ - ]: Change min&max_nb_sentences?
-# [ - ]: Change the summarizer used summarizer_tool.X
-
-
 # TIMES : 
 # When the text was separated by posts 
 # LexRank: --- 850.9803490638733 seconds --- 14.20 min
@@ -47,6 +41,11 @@ from gensim.summarization.summarizer import _format_results
 # TextRank uses sumy
 # SumBasic uses modified algo of Gensim
 
+# Check list: 
+# [ - ]: Change name of variable summarization_technique
+# [ - ]: Change min&max_nb_sentences?
+# [ - ]: Change the summarizer used summarizer_tool.X
+
 
 def get_n_best_extracted_sentences_text(extracted_sentences, nb_sentence):
     n_best_extracted_sentences = extracted_sentences[:nb_sentence]
@@ -56,21 +55,21 @@ def get_n_best_extracted_sentences_text(extracted_sentences, nb_sentence):
 def run():
     print("Running : thread_summarizer")
     
-    summarization_technique = "textrank"    
+    summarization_technique = "lexrank"    
 
     # Init tools 
     summarizer_tool = SummarizerTool()
 
     # Load thread text data in dataframe
-    thread_text_file = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "threads_text_for_summarization_no1.csv"]
+    thread_text_file = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "summarization_with_sample_dataset_mturk_no2", "threads_text_for_summarization_no2.csv"]
     input_file = os.path.join("", *thread_text_file)
     df_threads_text = pd.read_csv(input_file)
     
     # TODO REMOVE LINE BELOW
     #df_threads_text = df_threads_text[:1]
 
-    min_nb_sentences = 1
-    max_nb_sentences = 50
+    min_nb_sentences = 20
+    max_nb_sentences = 20
     
     for row in df_threads_text.itertuples():
         # See progress
@@ -111,14 +110,14 @@ def run():
     # Write df_sample_dataset
     filename = "threads_summarized_" + summarization_technique + "_" + str(min_nb_sentences) + "_to_" + str(max_nb_sentences)
     filename_with_text = filename + ".csv"
-    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename_with_text]
+    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "summarization_with_sample_dataset_mturk_no2", "sentences", filename_with_text]
     output_file = os.path.join("", *posts_path)
     df_threads_text.to_csv(output_file, sep=",", encoding="utf-8", index=False) 
 
     df_threads_text = df_threads_text.drop(["thread_text"], axis=1)
 
     filename_without_text = filename + "_no_text.csv"
-    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "sentences", filename_without_text]
+    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "summarization_with_sample_dataset_mturk_no2", "sentences", filename_without_text]
     output_file = os.path.join("", *posts_path)
     df_threads_text.to_csv(output_file, sep=",", encoding="utf-8", index=False) 
 

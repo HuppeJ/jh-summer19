@@ -25,7 +25,7 @@ score_techniques = ["rouge_1", "rouge_2", "rouge_3", "rouge_4"]
 def load_data_in_data_object(summarization_technique, score_technique, min_nb_sentences, max_nb_sentences):
     input_file_name = "threads_summarized_" + summarization_technique + "_" + score_technique + "_scores_" + str(min_nb_sentences) + "_to_" + str(max_nb_sentences) + ".csv"
 
-    threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "sentences", input_file_name]
+    threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "summarization_with_sample_dataset_mturk_no1", "sentences", input_file_name]
     input_file = os.path.join("", *threads_sample_path)
     df_input = pd.read_csv(input_file)
 
@@ -46,7 +46,7 @@ sumy_score_techniques = ["rouge_2", "rouge_3"]
 def load_sumy_texrank_data_in_data_object(summarization_technique, score_technique, min_nb_sentences, max_nb_sentences):
     input_file_name = "threads_summarized_" + summarization_technique + "_sumy_" + score_technique + "_scores_" + str(min_nb_sentences) + "_to_" + str(max_nb_sentences) + ".csv"
 
-    threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "sentences", input_file_name]
+    threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "summarization_with_sample_dataset_mturk_no1", "sentences", input_file_name]
     input_file = os.path.join("", *threads_sample_path)
     df_input = pd.read_csv(input_file)
 
