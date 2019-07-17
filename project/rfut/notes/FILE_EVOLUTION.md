@@ -53,6 +53,16 @@ Which gave us the file below:
 
 ## 9. parsed_0.02_kept_threads_with_is_question_and_annotations.csv
 
+Grouped the data into three sub-datasets:
+
+- Dataset 1: question sentences (is_question tag)
+- Dataset 2: sentences that contains annotations and are not question sentences (!is_question and has_annotations tag)
+- Dataset 3: sentences that do not contains annotations and are not question sentences (!is_question and !has_annotations tag)
+(see sampler_for_mturk_no1.py)
+Which gave us the files below:
+
+## 9.1 all_question_sentences_mturk_no1.csv & all_annotations_without_questions_sentences_mturk_no1.csv & all_other_sentences_mturk_no1.csv
+
 Took three random sample from parsed_0.02_kept_threads_with_is_question_and_annotations.csv
 
 - Sample dataset #1: 3500 question sentences (is_question tag)
@@ -168,3 +178,15 @@ For each thread we summarized the hole thread conversation (thread_text in threa
 Which gave us the file below:
 
 ## 28. threads_summarized_lexrank_20_to_20.csv
+
+Added sentence_id to each sentence of sample_dataset_mturk_no2.csv
+(add_sentence_id_to_dataset.py)
+Which gave us the file below:
+
+## 29. sample_dataset_mturk_no2_with_sentence_ids.csv
+
+Grouped 5 sentences per row to submit multiple sentences in one HIT in mturk
+(group_n_sentences_in_one_row_for_mturk.py)
+Which gave us the file below:
+
+## 30. sample_dataset_mturk_no2_group_of_5_sent.csv

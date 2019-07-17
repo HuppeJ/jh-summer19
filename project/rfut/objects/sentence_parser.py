@@ -54,3 +54,6 @@ class SentenceParser(object):
         pattern = re.compile(pattern, re.IGNORECASE)
         matches = re.search(pattern, text)
         return bool(matches)
+
+    def get_sentence_id(self, thread_id, post_number, sentence_number):
+        return "sentence-" + str(thread_id) + "-" + str(post_number) + "-" + str(sentence_number)

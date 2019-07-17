@@ -19,6 +19,6 @@ class SummarizerTool(object):
         for sentence in sentences:
             summary_string += "\n " + str(sentence)
         summary_string = summary_string[2:]
-        summary_string = self.sp.remove_quotes_symbols(summary_string)
+        #summary_string = self.sp.remove_quotes_symbols(summary_string)
 
         return summary_string

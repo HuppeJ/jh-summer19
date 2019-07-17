@@ -22,6 +22,8 @@ from rfut.scripts.dataset_builder_first_posts import run as run_dataset_builder_
 from rfut.scripts.dataset_builder_add_subforum_number_to_i_csv_files import run as run_dataset_builder_add_subforum_number_to_i_csv_files
 from rfut.scripts.core_nlp_clause_tags_to_is_question import run as run_core_nlp_clause_tags_to_is_question
 from rfut.scripts.update_mturk_sample import run as run_update_mturk_sample
+from rfut.scripts.add_sentence_id_to_dataset import run as run_add_sentence_id_to_dataset
+from rfut.scripts.group_n_sentences_in_one_row_for_mturk import run as run_group_n_sentences_in_one_row_for_mturk
 
 def run():
     start_time = time.time()

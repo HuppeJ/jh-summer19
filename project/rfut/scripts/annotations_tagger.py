@@ -9,6 +9,7 @@ from nltk import sent_tokenize
 from rfut.common.constants import PROJECT_PATH, DATA_OUTPUT_PATH
 from rfut.objects.sentence_parser import SentenceParser 
 
+# Time: --- 95.95727944374084 seconds ---
 
 def run():
     print("Running : annotations_tagger")
