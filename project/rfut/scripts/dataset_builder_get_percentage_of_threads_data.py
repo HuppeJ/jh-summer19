@@ -46,6 +46,7 @@ def run():
     posts_path = [DIABETES_DATA_PATH, POSTS_DATA_PATH]
     posts_directory = os.path.join('', *posts_path)
     i = 0 
+    nb_subforum_added = 0
     for subdir, dirs, files in os.walk(posts_directory):
         for file in files:
             fileInput = subdir + os.sep + file
@@ -57,16 +58,20 @@ def run():
                     df_input_copy = df_input_copy.drop_duplicates('thread_id')
                     nb_threads = len(df_input_copy)
                     nb_threads_to_select = math.floor(percentage_of_threads_to_select * nb_threads)
+                    print("subforum_num:", subforum_num, "nb_threads:", nb_threads)
                     sample = df_input_copy.sample(nb_threads_to_select)
                     thread_id_sample_list = sample[POST_THREAD_ID_COLUMN].tolist()
                     # add tag to posts to which subforum
                     df_sample = df_input.loc[df_input[POST_THREAD_ID_COLUMN].isin(thread_id_sample_list)]
                     df_sample[POST_SUBFORUM_NUMBER] = subforum_num
                     df_output = df_output.append(df_sample)
-                    print(subforum_num)
-    
+                    nb_subforum_added = nb_subforum_added + 1
+
+
+    print("len(selected_subforums)", len(selected_subforums))
+    print("nb_subforum_added", nb_subforum_added)
     # Write output file
-    filename = str(percentage_of_threads_to_select) + "-of_threads_random_sample.csv"
+    filename = str(percentage_of_threads_to_select) + "-of_threads_random_sample_2.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
     output_file = os.path.join('', *posts_path)
     df_output.to_csv(output_file, sep=',', encoding='utf-8', index=False)     

@@ -28,5 +28,5 @@ from rfut.scripts.group_n_sentences_in_one_row_for_mturk import run as run_group
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")
-    run_thread_summarizer()
+    run_dataset_builder_get_percentage_of_threads_data()
     print("--- %s seconds ---" % (time.time() - start_time))

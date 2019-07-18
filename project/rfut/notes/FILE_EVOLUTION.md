@@ -3,7 +3,7 @@
 ## 1. 0.02-of_threads_random_sample.csv: 
 
 It contains the sample of threads extracted from the selected subforums (2% of threads of each selected subforums)
-(see get_percentage_of_threads_data.py)
+(see dataset_builder_get_percentage_of_threads_data .py)
   
 ## 2. parsed_0.02_of_threads_to_sentences.csv: 
 
@@ -26,7 +26,7 @@ Which gave us the two files below:
 
 ## 5. parsed_0.02_of_threads_to_sentences_removed_sentences.csv
 
-After that, from parsed_0.02_of_threads_to_sentences_kept_sentences.csv, we removed the introduction threads threads starting with Hi, Hello, New here, etc. 
+After that, from parsed_0.02_of_threads_to_sentences_kept_sentences.csv, we removed the introduction threads, threads that have a title starting with Hi, Hello, New here etc. 
 Note: those files are poorly named, we are not removing threads, but sentences.
 (see remove_introduction_threads.py) 
 Which gave us the two files below:
