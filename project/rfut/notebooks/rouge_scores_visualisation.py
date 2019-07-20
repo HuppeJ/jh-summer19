@@ -4,13 +4,18 @@ import csv
 import os
 import re
 import pandas as pd
-from rfut.common.constants import PROJECT_PATH, DATA_OUTPUT_PATH
+from rfut.common.constants import PROJECT_PATH, DATA_OUTPUT_PATH, IMG_OUTPUT_PATH
 import numpy as np
 import matplotlib.pyplot as plt 
 
 # Init dictionary
 data = {}
 
+def export_graph_as_pdf(plt, filename):
+    file_name = filename
+    file_path = [PROJECT_PATH, IMG_OUTPUT_PATH, file_name]
+    file = os.path.join("", *file_path)
+    plt.savefig(file)
 
 
 def get_scores_means_key(summarization_technique, score_technique, min_nb_sentences, max_nb_sentences): 
@@ -111,13 +116,13 @@ for score_technique in score_techniques:
             sumy_scores_means_key = "sumy_" + get_scores_means_key(summarization_technique, score_technique, min_nb_sentences, max_nb_sentences)
             sumy_nb_sentences_key = "sumy_" + get_nb_sentences_key(summarization_technique, score_technique, min_nb_sentences, max_nb_sentences)
 
-            plt.plot(data[sumy_nb_sentences_key], data[sumy_scores_means_key], linestyle="dashed", linewidth = 1, marker=".") 
+            #plt.plot(data[sumy_nb_sentences_key], data[sumy_scores_means_key], linestyle="dashed", linewidth = 1, marker=".") 
 
     plt.xlim(min_nb_sentences - 1, max_nb_sentences + 1) 
     plt.ylim(0,1) 
 
-    plt.title(score_technique.upper() + " scores in function of the nb. of sentences") 
-    plt.xlabel("Nb. of sentences") 
+    # plt.title(score_technique.upper() + " scores in function \n of the number of sentences in the summary") 
+    plt.xlabel("Number of sentences in the summary") 
     plt.ylabel(score_technique.upper() + " score") 
     
     legend = summarization_techniques
@@ -127,9 +132,20 @@ for score_technique in score_techniques:
 
     plt.legend(legend, loc='lower right')
 
+    if score_technique == "rouge_2":
+        plt.ylabel("Average ROUGE-2 score") 
+        export_graph_as_pdf(plt, "rouge_2_scores_in_function_of_the_number_of_sentences_in_the_summary.pdf")
+
     plt.show()
+
+
+
+
 
 
 
 #%%
 
+
+
+#%%

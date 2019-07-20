@@ -14,6 +14,15 @@ from sumy.nlp.tokenizers import Tokenizer
 from scipy import stats
 import statsmodels.api as sm
 from statsmodels.formula.api import ols
+from matplotlib.ticker import FormatStrFormatter
+
+
+def export_graph_as_pdf(plt, filename):
+    file_name = filename
+    file_path = [PROJECT_PATH, IMG_OUTPUT_PATH, file_name]
+    file = os.path.join("", *file_path)
+    plt.savefig(file)
+
 
 # Init tools 
 ta = ThreadAnalyzer()
@@ -96,22 +105,19 @@ ax.boxplot([df_stats["avg_len_of_sent_in_dataset_mturk_no2"], df_stats["avg_len_
 
 #ax.set(ylim=(0, 50))
 
-#%%
+
 # Notch Boxplot  Average nb. of words in sentences
 fig = plt.figure()
 ax = fig.add_subplot(111)
-fig.suptitle("Average nb. of words in sentences for dataset_mturk_no2 and threads_summarized_lexrank")
-plt.ylabel("Average nb. of words in sentences")
-ax.boxplot([df_stats["avg_len_of_sent_in_dataset_mturk_no2"], df_stats["avg_len_of_sent_in_df_threads_summarized_lexrank"]], notch = True, labels=["dataset_mturk_no2", "threads_summarized_lexrank"])
+#fig.suptitle("Number of words in sentences for  \n Mturk Sentences Sample Dataset and \n 20 sentences thread summaries")
+plt.ylabel("Number of words in sentences")
+ax.boxplot([df_stats["avg_len_of_sent_in_dataset_mturk_no2"], df_stats["avg_len_of_sent_in_df_threads_summarized_lexrank"]], notch = True, labels=["Mturk Sentences Sample \n Dataset", "20 sentences thread summaries"])
 #ax.set(ylim=(0, 50))
 
-file_name = "avg_nb_words_in_sent.pdf"
-file_path = [PROJECT_PATH, IMG_OUTPUT_PATH, file_name]
-file = os.path.join("", *file_path)
-plt.savefig(file)
+export_graph_as_pdf(plt, "avg_nb_words_in_sent.pdf")
 
 
-#%% 
+
 
 # Statistic tests to find if there is a significant relation between 
 # avg_len_of_sent_in_dataset_mturk_no2 and avg_len_of_sent_in_df_threads_summarized_lexrank
@@ -122,7 +128,10 @@ plt.savefig(file)
 # https://machinelearningmastery.com/parametric-statistical-significance-tests-in-python/
 
 x1 = df_stats["avg_len_of_sent_in_dataset_mturk_no2"]
+print(x1.describe())
 x2 = df_stats["avg_len_of_sent_in_df_threads_summarized_lexrank"]
+print(x2.describe())
+
 print("T-test using scipy:")
 
 t, p = stats.ttest_ind(x1, x2)
@@ -164,6 +173,12 @@ print("p-value:", p)
 
 #%%
 # For each thread-id, get the nb. of sentences in the thread summaries that are in the dataset_mturk_no2
+
+df_sentences_in_both_datasets = pd.DataFrame()
+df_sentences_in_both_datasets["thread_id"] = ""
+df_sentences_in_both_datasets["sentences_in_both_datasets"] = ""
+
+
 df_stats["nb_of_sent_from_df_dataset_mturk_no2_in_threads_summarized_lexrank"] = 0
 for row in df_stats.itertuples():
     thread_id = df_stats.at[row.Index, "thread_id"]
@@ -172,38 +187,63 @@ for row in df_stats.itertuples():
     count = 0
     for mturk_sent in mturk_list_of_sent:
         for summary_sent in summary_list_of_sent:
-            if mturk_sent in summary_sent:
+            if mturk_sent == summary_sent:
                 count = count + 1
+                temp = {
+                    "thread_id": thread_id,
+                    "sentences_in_both_datasets": mturk_sent,
+                }
+                df_sentences_in_both_datasets = df_sentences_in_both_datasets.append(temp, ignore_index=True)
     df_stats.at[row.Index, "nb_of_sent_from_df_dataset_mturk_no2_in_threads_summarized_lexrank"] = count
 
 print("Statistics about the nb. of sentences in the thread summaries that are in the dataset_mturk_no2")
 print(df_stats["nb_of_sent_from_df_dataset_mturk_no2_in_threads_summarized_lexrank"].describe())
 print("")
-print("So in average a summary of 20 sentences has 1.892725 sentence in dataset_mturk_no2")
+print("So in average a summary of 20 sentences has 0.155514 sentence in dataset_mturk_no2")
 
 fig = plt.figure()
 ax = fig.add_subplot(111)
-fig.suptitle("Nb. of sentence of the summary that are dataset mturk no2 for each summary")
-plt.ylabel("Nb. of sentences")
+#fig.suptitle("Nb. of sentence of the summary that are dataset mturk no2 for each summary")
+plt.ylabel("Number of sentences")
 ax.boxplot([df_stats["nb_of_sent_from_df_dataset_mturk_no2_in_threads_summarized_lexrank"]], labels=["Distribution"])
 #ax.set(ylim=(0, 2))
-
+export_graph_as_pdf(plt, "distribution_of_the_number_of_sentences_in_the_20_sentences_thread_summaries_that_are_in_mturk_sentences_sample_dataset.pdf")
 
 #%%
+filename = "df_sentences_in_both_datasets.csv"
+output_file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
+output_file = os.path.join('', *output_file_path)
+df_sentences_in_both_datasets.to_csv(output_file, sep=',', encoding='utf-8', index=False)  
+
+filename = "df_stats.csv"
+output_file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
+output_file = os.path.join('', *output_file_path)
+df_stats.to_csv(output_file, sep=',', encoding='utf-8', index=False)  
+
+total_number_of_sent_from_df_dataset_mturk_no2_in_threads_summarized_lexrank = df_stats["nb_of_sent_from_df_dataset_mturk_no2_in_threads_summarized_lexrank"].sum()
+print("total_number_of_sent_from_df_dataset_mturk_no2_in_threads_summarized_lexrank", total_number_of_sent_from_df_dataset_mturk_no2_in_threads_summarized_lexrank)
+#%%
 # Histogram of nb. of sentences in the thread summaries that are in the dataset_mturk_no2
-n, bins, patches = plt.hist(x=df_stats["nb_of_sent_from_df_dataset_mturk_no2_in_threads_summarized_lexrank"], bins="auto", color="#228B22",
-                            alpha=0.7, rwidth=0.85)
+
+data = np.asarray(df_stats["nb_of_sent_from_df_dataset_mturk_no2_in_threads_summarized_lexrank"].values, dtype=int)
+
+
+
+n, bins, patches = plt.hist(x=data, bins=list(range(0,6)), color="#228B22", alpha=0.7, rwidth=0.85)
 plt.grid(axis="y", alpha=0.75)
-plt.xlabel("nb. of sentences in the thread summaries that are in the dataset_mturk_no2")
+plt.xlabel("Number of sentences in the 20 sentences thread summaries \n that are in Mturk Sentences Sample Dataset")
 plt.ylabel("Frequency")
-plt.title("Frequency of the nb. of sentences in the thread summaries that are in the dataset_mturk_no2")
+#plt.title("Frequency of the number of sentences in the thread summaries that are in mturk sentences sample dataset")
 maxfreq = n.max()
 # Set a clean upper y-axis limit.
 plt.ylim(ymax=np.ceil(maxfreq / 10) * 10 if maxfreq % 10 else maxfreq + 10)
 #plt.xlim(0, 200)
 
 
-#%%
+export_graph_as_pdf(plt, "frequency_of_the_number_of_sentences_in_the_20_sentences_thread_summaries_that_are_in_mturk_sentences_sample_dataset.pdf")
+
+
+
 # Summaries of threads that have at least one sentence in dataset mturk no2
 df_at_least_one_sent =  df_stats.loc[df_stats["nb_of_sent_from_df_dataset_mturk_no2_in_threads_summarized_lexrank"] > 0]
 nb_of_summaries_with_at_least_one_sent_in_dataset_mturk_no2 = len(df_at_least_one_sent)
@@ -216,7 +256,7 @@ print("nb_of_summaries: ", nb_of_summaries)
 df_stats["nb_of_sent_per_thread"] = 0
 
 
-# Load parsed_0.02_of_threads_to_sentences_kept_sentences.csv
+# Load parsed_0.02_of_threads_to_sentences.csv
 # It contains all the sentences of all the threads that are in dataset_mturk_no2 
 # and also, by the same fact, those that are in  threads_summarized_lexrank
 input_file_name = "parsed_0.02_of_threads_to_sentences_kept_sentences.csv"
@@ -232,7 +272,10 @@ for row in df_stats.itertuples():
     thread_id = df_stats.at[row.Index, "thread_id"]
     df_stats.at[row.Index, "nb_of_sent_per_thread"] = value_counts[thread_id]
 
-print("Average number of sentences per thread:" , round(df_stats["nb_of_sent_per_thread"].mean()))
+print(df_stats["nb_of_sent_per_thread"].describe())
+
+print("So the average number of sentences per thread:" , round(df_stats["nb_of_sent_per_thread"].mean()))
+
 
 # Distribution of the number of sentences per thread
 fig = plt.figure()
@@ -244,13 +287,16 @@ ax.boxplot([df_stats["nb_of_sent_per_thread"]], labels=["Distribution"])
 # Distribution of the number of sentences per thread zoomed-in
 fig = plt.figure()
 ax = fig.add_subplot(111)
-fig.suptitle("Distribution of the number of sentences per thread zoomed-in")
+#fig.suptitle("Distribution of the number of sentences per thread zoomed-in")
 plt.ylabel("Nb. of sentences")
 ax.boxplot([df_stats["nb_of_sent_per_thread"]], labels=["Distribution"])
 ax.set(ylim=(0, 200))
+export_graph_as_pdf(plt, "distribution_of_the_number_of_sentences_per_thread_zoomed_in.pdf")
+
 
 #%%
 # Histogram of the Nb. of sentences per thread
+
 n, bins, patches = plt.hist(x=df_stats["nb_of_sent_per_thread"], bins="auto", color="#0504aa",
                             alpha=0.7, rwidth=0.85)
 plt.grid(axis="y", alpha=0.75)
@@ -261,18 +307,23 @@ maxfreq = n.max()
 # Set a clean upper y-axis limit.
 plt.ylim(ymax=np.ceil(maxfreq / 10) * 10 if maxfreq % 10 else maxfreq + 10)
 
+
 #%%
 # Histogram of Nb. of sentences per thread zoomed-in
 n, bins, patches = plt.hist(x=df_stats["nb_of_sent_per_thread"], bins="auto", color="#0504aa",
                             alpha=0.7, rwidth=0.85)
 plt.grid(axis="y", alpha=0.75)
-plt.xlabel("Nb. of sentences per thread")
+plt.xlabel("Number of sentences per thread")
 plt.ylabel("Frequency")
-plt.title("Frequency of the Nb. of sentences per thread zoomed-in")
+#plt.title("Frequency of the Nb. of sentences per thread zoomed-in")
 maxfreq = n.max()
 # Set a clean upper y-axis limit.
 plt.ylim(ymax=np.ceil(maxfreq / 10) * 10 if maxfreq % 10 else maxfreq + 10)
 plt.xlim(0, 200)
+export_graph_as_pdf(plt, "frequency_of_the_number_of_sentences_per_thread_zoomed_in.pdf")
+
+
+#%%
 
 
 #%%

@@ -37,9 +37,9 @@ from gensim.summarization.summarizer import _format_results
 # SumBasic: 
 
 # Important Note: 
+# SumBasic uses sumy
 # LexRank uses sumy
-# TextRank uses sumy
-# SumBasic uses modified algo of Gensim
+# TextRank uses modified algo of Gensim (it is the Gensim algo, but adjusted to get the all the summaries of 1 to 50 sentences at once.)
 
 # Check list: 
 # [ - ]: Change name of variable summarization_technique
