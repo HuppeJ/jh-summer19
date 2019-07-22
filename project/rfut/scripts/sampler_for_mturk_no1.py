@@ -8,9 +8,17 @@ from rfut.common.constants import PROJECT_PATH, DATA_OUTPUT_PATH
 def run():
 
     # Load sample of threads data in dataframe
-    threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "parsed_0.02_kept_threads_with_is_question_and_annotations.csv"]
-    input_file = os.path.join('', *threads_sample_path)
+    file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "parsed_0.02_kept_threads_with_is_question_and_annotations.csv"]
+    input_file = os.path.join('', *file_path)
     df_input = pd.read_csv(input_file)
+
+    # TODO remove: Only used for a demonstration
+    #file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "summarization_with_sample_dataset_mturk_no2", "sentences",  "threads_summarized_lexrank_20_to_20.csv"]
+    #input_file = os.path.join('', *file_path)
+    #df_summaries = pd.read_csv(input_file)
+    #thread_ids = df_summaries["thread_id"].unique()
+    #thread_ids_list = thread_ids.tolist()
+
 
     mask_questions = df_input["is_question"]
     df_questions = df_input[mask_questions]
@@ -75,18 +83,20 @@ def run():
     print("Nb. of sentences with annotations that are in question form", nb_annotations_with_questions)
 
 
+    # TODO remove: Only used for a demonstration
+    #df_questions = df_questions.loc[df_questions["thread_id"].isin(thread_ids_list)]
+    #df_annotations_without_questions = df_annotations_without_questions.loc[df_annotations_without_questions["thread_id"].isin(thread_ids_list)]
+    #df_none = df_none.loc[df_none["thread_id"].isin(thread_ids_list)]
+
     # Create sample datasets 
     # Should only be runned once
-    
     sample_df_questions = df_questions.sample(3500)
     sample_df_annotations_without_questions = df_annotations_without_questions.sample(3500)
     sample_df_none = df_none.sample(3500)
-
+    
     sample_df_annotations_without_questions_and_df_none = sample_df_annotations_without_questions.append(sample_df_none)
     df_sample_dataset = sample_df_annotations_without_questions_and_df_none.append(sample_df_questions)    
-    print("ICI")
-    print(len(df_sample_dataset))
-
+    
     # Write df_sample_dataset
     filename = "[No_overwrite]sample_dataset_mturk_no2.csv"
     posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
