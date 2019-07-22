@@ -24,9 +24,10 @@ from rfut.scripts.core_nlp_clause_tags_to_is_question import run as run_core_nlp
 from rfut.scripts.update_mturk_sample import run as run_update_mturk_sample
 from rfut.scripts.add_sentence_id_to_dataset import run as run_add_sentence_id_to_dataset
 from rfut.scripts.group_n_sentences_in_one_row_for_mturk import run as run_group_n_sentences_in_one_row_for_mturk
+from rfut.scripts.parse_mturk_no2_results import run as run_parse_mturk_no2_results
 
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")
-    run_dataset_builder_get_percentage_of_threads_data()
+    run_parse_mturk_no2_results()
     print("--- %s seconds ---" % (time.time() - start_time))
