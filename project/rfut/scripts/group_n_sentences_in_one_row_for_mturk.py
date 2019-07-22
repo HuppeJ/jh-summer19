@@ -23,8 +23,8 @@ def update_row_data_dict(df_input, row, row_data_dict, sentence_count):
 
 def run():
     # Load sample of threads data in dataframe
-    threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "sample_dataset_mturk_no2_with_sentence_ids.csv"]
-    input_file = os.path.join('', *threads_sample_path)
+    file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "sample_dataset_mturk_no2_with_sentence_ids.csv"]
+    input_file = os.path.join('', *file_path)
     df_input = pd.read_csv(input_file)
 
     df_output = pd.DataFrame()

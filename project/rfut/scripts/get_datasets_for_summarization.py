@@ -26,8 +26,8 @@ def run():
     df_thread_text["thread_id"] = thread_ids
 
     # Load sample of threads data in dataframe
-    threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "0.02-of_threads_random_sample.csv"]
-    input_file = os.path.join("", *threads_sample_path)
+    file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "0.02-of_threads_random_sample.csv"]
+    input_file = os.path.join("", *file_path)
     df_threads = pd.read_csv(input_file)
 
     for thread_id in thread_ids:

@@ -44,14 +44,14 @@ def run():
 
     # First run of the program
     # Load sample of threads data in dataframe
-    #threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "parsed_0.02_of_threads_kept_threads.csv"]
-    #input_file = os.path.join('', *threads_sample_path)
+    #file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "parsed_0.02_of_threads_kept_threads.csv"]
+    #input_file = os.path.join('', *file_path)
     #df_input = pd.read_csv(input_file)
     #df_input["core_nlp_clause_tag"] = 0
 
     # Second run and more of the program
-    threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "parsed_0.02_kept_threads_with_core_nlp_clause_tags.csv"]
-    input_file = os.path.join('', *threads_sample_path)
+    file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "parsed_0.02_kept_threads_with_core_nlp_clause_tags.csv"]
+    input_file = os.path.join('', *file_path)
     df_input = pd.read_csv(input_file)
 
     #df_input_1 = df_input.iloc[0:10000]

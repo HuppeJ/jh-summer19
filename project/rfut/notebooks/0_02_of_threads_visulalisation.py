@@ -21,8 +21,8 @@ sp = SentenceParser()
 
 # Load Dataset parsed_0.02_kept_threads_with_is_question_and_annotations
 input_file_name = "parsed_0.02_kept_threads_with_is_question_and_annotations.csv"
-threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, input_file_name]
-input_file = os.path.join("", *threads_sample_path)
+file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, input_file_name]
+input_file = os.path.join("", *file_path)
 df_input = pd.read_csv(input_file)
 
 

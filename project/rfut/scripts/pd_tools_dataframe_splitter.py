@@ -8,8 +8,8 @@ from rfut.common.constants import PROJECT_PATH, DATA_OUTPUT_PATH
 def run():
 
     # Load sample of threads data in dataframe
-    threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "sample_dataset_mturk_no1.csv"]
-    input_file = os.path.join('', *threads_sample_path)
+    file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "sample_dataset_mturk_no1.csv"]
+    input_file = os.path.join('', *file_path)
     df_input = pd.read_csv(input_file)
 
     df_input_1 = df_input.iloc[0:1000]

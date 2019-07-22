@@ -18,14 +18,13 @@ def run():
     sp = SentenceParser()
 
     # Load sample of threads data in dataframe
-    #  TODO : parsed_0.02_kept_threads_with_is_question.csv
-    threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "parsed_0.02_kept_threads_with_is_question.csv"]
-    input_file = os.path.join('', *threads_sample_path)
+    file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "parsed_0.02_kept_threads_with_is_question.csv"]
+    input_file = os.path.join('', *file_path)
     df_input = pd.read_csv(input_file)
 
     # Load the annotations 
-    threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "annotations", "annotations_with_synonyms.csv"]
-    input_file = os.path.join('', *threads_sample_path)
+    file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "annotations", "annotations_with_synonyms.csv"]
+    input_file = os.path.join('', *file_path)
     df_annotations = pd.read_csv(input_file)
     annotations = df_annotations["keywords"].tolist()
 

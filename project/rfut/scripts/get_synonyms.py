@@ -17,8 +17,8 @@ def run():
     print("Running get_synonyms")
     
     # Load initial keywords list
-    threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "annotations", "annotations.csv"]
-    input_file = os.path.join('', *threads_sample_path)
+    file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "annotations", "annotations.csv"]
+    input_file = os.path.join('', *file_path)
     df_annotations = pd.read_csv(input_file)
     df_annotations_with_synonyms = df_annotations.copy()
 

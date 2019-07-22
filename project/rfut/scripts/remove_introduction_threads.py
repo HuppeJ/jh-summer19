@@ -27,8 +27,8 @@ def run():
 
 
     # Load sample of threads data in dataframe
-    parsed_threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "parsed_0.02_of_threads_to_sentences_kept_sentences.csv"]
-    input_file = os.path.join('', *parsed_threads_sample_path)
+    parsed_file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "parsed_0.02_of_threads_to_sentences_kept_sentences.csv"]
+    input_file = os.path.join('', *parsed_file_path)
     df_input = pd.read_csv(input_file)
     
     # Remove all non desired thread:

@@ -30,8 +30,8 @@ sp = SentenceParser()
 
 # Load sample_dataset_mturk_no2 (First dataset ready to sumbit to mturk)
 input_file_name = "sample_dataset_mturk_no2.csv"
-threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, input_file_name]
-input_file = os.path.join("", *threads_sample_path)
+file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, input_file_name]
+input_file = os.path.join("", *file_path)
 df_dataset_mturk_no2 = pd.read_csv(input_file)
 
 # Get_list_of_sent_for_each_thread for the dataset sample_dataset_mturk_no2
@@ -40,8 +40,8 @@ df_dataset_mturk_no2_list_of_sent = ta.get_list_of_sent_for_each_thread(df_datas
 
 # Load Threads summarized with LexRank
 input_file_name = "threads_summarized_lexrank_20_to_20.csv"
-threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH,"summarization", "summarization_with_sample_dataset_mturk_no2", "sentences", input_file_name]
-input_file = os.path.join("", *threads_sample_path)
+file_path = [PROJECT_PATH, DATA_OUTPUT_PATH,"summarization", "summarization_with_sample_dataset_mturk_no2", "sentences", input_file_name]
+input_file = os.path.join("", *file_path)
 df_threads_summarized_lexrank = pd.read_csv(input_file)
 
 # Create dict with all the thread_ids of df_threads_summarized_lexrank
@@ -258,8 +258,8 @@ df_stats["nb_of_sent_per_thread"] = 0
 # It contains all the sentences of all the threads that are in dataset_mturk_no2 
 # and also, by the same fact, those that are in  threads_summarized_lexrank
 input_file_name = "parsed_0.02_of_threads_to_sentences_kept_sentences.csv"
-threads_sample_path = [PROJECT_PATH, DATA_OUTPUT_PATH, input_file_name]
-input_file = os.path.join("", *threads_sample_path)
+file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, input_file_name]
+input_file = os.path.join("", *file_path)
 df_threads_text = pd.read_csv(input_file)
 
 # Get the counts of the number of sentences for each thread
