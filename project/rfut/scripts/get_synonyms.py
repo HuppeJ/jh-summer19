@@ -50,6 +50,6 @@ def run():
     df_annotations_with_synonyms["keywords"] = improved_annotations
 
     # Write output file
-    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "annotations", "annotations_with_synonyms.csv"]
-    output_file = os.path.join('', *posts_path)
+    output_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "annotations", "annotations_with_synonyms.csv"]
+    output_file = os.path.join('', *output_path)
     df_annotations_with_synonyms.to_csv(output_file, sep=',', encoding='utf-8', index=False)    

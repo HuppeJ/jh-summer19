@@ -59,14 +59,14 @@ def run():
 
     # Write df_kept_threads file
     filename = "parsed_0.02_of_threads_kept_threads.csv"
-    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
-    output_file = os.path.join('', *posts_path)
+    output_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
+    output_file = os.path.join('', *output_path)
     df_kept_threads.to_csv(output_file, sep=',', encoding='utf-8', index=False)
 
     # Write df_removed_threads file
     filename = "parsed_0.02_of_threads_removed_threads.csv"
-    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
-    output_file = os.path.join('', *posts_path)
+    output_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
+    output_file = os.path.join('', *output_path)
     df_removed_threads.to_csv(output_file, sep=',', encoding='utf-8', index=False)
     print("Finished")
 

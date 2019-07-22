@@ -16,6 +16,6 @@ def run():
 
     # Write df_sample_dataset
     filename = "threads_summarized_sumbasic_1_to_25_no_text.csv"
-    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
-    output_file = os.path.join('', *posts_path)
+    output_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
+    output_file = os.path.join('', *output_path)
     df_input.to_csv(output_file, sep=',', encoding='utf-8', index=False) 

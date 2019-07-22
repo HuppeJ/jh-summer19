@@ -110,14 +110,14 @@ def run():
     # Write df_sample_dataset
     filename = "threads_summarized_" + summarization_technique + "_" + str(min_nb_sentences) + "_to_" + str(max_nb_sentences)
     filename_with_text = filename + ".csv"
-    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "summarization_with_sample_dataset_mturk_no2", "sentences", filename_with_text]
-    output_file = os.path.join("", *posts_path)
+    output_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "summarization_with_sample_dataset_mturk_no2", "sentences", filename_with_text]
+    output_file = os.path.join("", *output_path)
     df_threads_text.to_csv(output_file, sep=",", encoding="utf-8", index=False) 
 
     df_threads_text = df_threads_text.drop(["thread_text"], axis=1)
 
     filename_without_text = filename + "_no_text.csv"
-    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "summarization_with_sample_dataset_mturk_no2", "sentences", filename_without_text]
-    output_file = os.path.join("", *posts_path)
+    output_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "summarization_with_sample_dataset_mturk_no2", "sentences", filename_without_text]
+    output_file = os.path.join("", *output_path)
     df_threads_text.to_csv(output_file, sep=",", encoding="utf-8", index=False) 
 

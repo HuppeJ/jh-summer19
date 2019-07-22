@@ -99,8 +99,8 @@ def run():
 
     # Write output file
     filename = "parsed_0.02_kept_threads_with_core_nlp_clause_tags.csv"
-    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
-    output_file = os.path.join('', *posts_path)
+    output_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
+    output_file = os.path.join('', *output_path)
     df_input.to_csv(output_file, sep=',', encoding='utf-8', index=False)
     
 

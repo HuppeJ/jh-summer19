@@ -50,18 +50,18 @@ def run():
 
     # Write output files
     filename = "all_question_sentences_mturk_no2.csv"
-    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
-    output_file = os.path.join('', *posts_path)
+    output_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
+    output_file = os.path.join('', *output_path)
     df_questions.to_csv(output_file, sep=',', encoding='utf-8', index=False) 
 
     filename = "all_annotations_without_questions_sentences_mturk_no2.csv"
-    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
-    output_file = os.path.join('', *posts_path)
+    output_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
+    output_file = os.path.join('', *output_path)
     df_annotations_without_questions.to_csv(output_file, sep=',', encoding='utf-8', index=False) 
 
     filename = "all_other_sentences_mturk_no2.csv"
-    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
-    output_file = os.path.join('', *posts_path)
+    output_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
+    output_file = os.path.join('', *output_path)
     df_none.to_csv(output_file, sep=',', encoding='utf-8', index=False)
 
     print("")
@@ -99,6 +99,6 @@ def run():
     
     # Write df_sample_dataset
     filename = "[No_overwrite]sample_dataset_mturk_no2.csv"
-    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
-    output_file = os.path.join('', *posts_path)
+    output_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
+    output_file = os.path.join('', *output_path)
     df_sample_dataset.to_csv(output_file, sep=',', encoding='utf-8') 

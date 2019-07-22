@@ -72,8 +72,8 @@ def run():
     print("nb_subforum_added", nb_subforum_added)
     # Write output file
     filename = str(percentage_of_threads_to_select) + "-of_threads_random_sample_2.csv"
-    posts_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
-    output_file = os.path.join('', *posts_path)
+    output_path = [PROJECT_PATH, DATA_OUTPUT_PATH, filename]
+    output_file = os.path.join('', *output_path)
     df_output.to_csv(output_file, sep=',', encoding='utf-8', index=False)     
 
 
