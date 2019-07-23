@@ -26,7 +26,7 @@ def run():
     
 
 
-    # Load sample of threads data in dataframe
+    # Load data
     parsed_file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "parsed_0.02_of_threads_to_sentences_kept_sentences.csv"]
     input_file = os.path.join('', *parsed_file_path)
     df_input = pd.read_csv(input_file)

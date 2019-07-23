@@ -1,18 +1,18 @@
 # Evolution of the files through time
 
-## 1. 0.02-of_threads_random_sample.csv: 
-
-It contains the sample of threads extracted from the selected subforums (2% of threads of each selected subforums)
+The file below contains the sample of threads extracted from the selected subforums (2% of threads of each selected subforums)
 (see dataset_builder_get_percentage_of_threads_data .py)
-  
-## 2. parsed_0.02_of_threads_to_sentences.csv: 
+
+## 1. 0.02-of_threads_random_sample.csv: 
 
 Took all the posts of 0.02-of_threads_random_sample.csv and parsed them into sentences 
 (see parse_posts_to_sentences.py)
-
-## 3. parsed_0.02_of_threads_to_sentences_with_stats.csv: 
+  
+## 2. parsed_0.02_of_threads_to_sentences.csv: 
 
 Contains all the sentences of the parsed posts with additional info (nb. of words/sentence & nb. of alnum char/sentence)
+
+## 3. parsed_0.02_of_threads_to_sentences_with_stats.csv: 
 
 Removed all the sentences from parsed_0.02_of_threads_to_sentences_with_stats.csv:
 

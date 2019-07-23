@@ -75,7 +75,7 @@ def run():
     # Init tools 
     sp = SentenceParser()
 
-    # Load sample of threads data in dataframe
+    # Load data
     file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "0.02-of_threads_random_sample.csv"]
     input_file = os.path.join('', *file_path)
     df_input = pd.read_csv(input_file)

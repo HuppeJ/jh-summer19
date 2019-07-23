@@ -10,7 +10,7 @@ def run():
     # Init tools 
     sp = SentenceParser()
 
-    # Load sample of threads data in dataframe
+    # Load data
     file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "sample_dataset_mturk_no2.csv"]
     input_file = os.path.join('', *file_path)
     df_input = pd.read_csv(input_file)

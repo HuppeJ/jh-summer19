@@ -10,7 +10,7 @@ from rfut.common.constants import PROJECT_PATH, DATA_OUTPUT_PATH
 def run():
     print("Running: update_mturk_sample")
 
-    # Load sample of threads data in dataframe
+    # Load data
     file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "summarization", "threads_text_for_summarization_no1.csv"]
     input_file = os.path.join('', *file_path)
     df_sum = pd.read_csv(input_file)

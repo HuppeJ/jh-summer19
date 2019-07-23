@@ -43,7 +43,7 @@ def run():
     sp = SentenceParser()
 
     # First run of the program
-    # Load sample of threads data in dataframe
+    # Load data
     #file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "parsed_0.02_of_threads_kept_threads.csv"]
     #input_file = os.path.join('', *file_path)
     #df_input = pd.read_csv(input_file)

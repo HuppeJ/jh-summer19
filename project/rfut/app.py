@@ -25,9 +25,10 @@ from rfut.scripts.update_mturk_sample import run as run_update_mturk_sample
 from rfut.scripts.add_sentence_id_to_dataset import run as run_add_sentence_id_to_dataset
 from rfut.scripts.group_n_sentences_in_one_row_for_mturk import run as run_group_n_sentences_in_one_row_for_mturk
 from rfut.scripts.parse_mturk_no2_results import run as run_parse_mturk_no2_results
+from rfut.scripts.count_duplicate_sentences_in_summaries import run as run_count_duplicate_sentences_in_summaries
 
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")
-    run_parse_mturk_no2_results()
+    run_count_duplicate_sentences_in_summaries()
     print("--- %s seconds ---" % (time.time() - start_time))
