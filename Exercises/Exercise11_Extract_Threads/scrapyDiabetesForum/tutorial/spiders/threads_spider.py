@@ -14,12 +14,12 @@ def get_subforumLinks():
     subforumlinks.pop(0) 
     return subforumlinks
 
-# scrapy crawl subforum
-# scrapy crawl subforum -o subforum.json
-# scrapy crawl subforum -o subforum.jl
+# scrapy crawl threads
+# scrapy crawl threads -o threads.json
+# scrapy crawl threads -o threads.jl
 
-class SubForumSpider(scrapy.Spider):
-    name = "subforum"
+class ThreadsSpider(scrapy.Spider):
+    name = "threads"
     start_urls = get_subforumLinks()
 
     # Nb. of page scraped

@@ -4,6 +4,7 @@ import csv
 import os
 import re
 
+
 def get_subforumLinks():
     dir_path = r"C:\Users\jerem\Desktop\jh-summer19\Exercises\Exercise11_Extract_Threads\scrapyDiabetesForum\counts\original"
     input_file_name = r"\counts_v2.csv"
@@ -26,13 +27,13 @@ def clean_text_for_filename(text):
     text = clean_text(text)
     return text
 
-# scrapy crawl thread
-# scrapy crawl thread -o thread.json
-# scrapy crawl thread -o thread.jl
+# scrapy crawl posts
+# scrapy crawl posts -o posts.json
+# scrapy crawl posts -o posts.jl
 
 index = 30
-class ThreadSpider(scrapy.Spider):
-    name = "thread"
+class PostsSpider(scrapy.Spider):
+    name = "posts"
     start_urls = [get_subforumLinks()[index]]
     html_path_out = r"C:\Users\jerem\Desktop\jh-summer19\Exercises\Exercise11_Extract_Threads\scrapyDiabetesForum\thread\source\30-diabetes management_blood glucose monitoring"
 

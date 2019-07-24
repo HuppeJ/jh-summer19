@@ -2,9 +2,9 @@
 import scrapy
 from bs4 import BeautifulSoup
     
-# scrapy crawl questions
-# scrapy crawl questions -o questions.json
-# scrapy crawl questions -o questions.jl
+# scrapy crawl name
+# scrapy crawl name -o name.json
+# scrapy crawl name -o name.jl
 
 class QuestionsSpider(scrapy.Spider):
     name = "questions"

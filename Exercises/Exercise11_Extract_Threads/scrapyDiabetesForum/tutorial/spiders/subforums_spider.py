@@ -1,12 +1,12 @@
 import scrapy
 from bs4 import BeautifulSoup
     
-# scrapy crawl counts
-# scrapy crawl counts -o counts.json
-# scrapy crawl counts -o counts.jl
+# scrapy crawl subforum
+# scrapy crawl subforum -o subforum.json
+# scrapy crawl subforum -o subforum.jl
 
-class CountsSpider(scrapy.Spider):
-    name = "counts"
+class SubforumSpider(scrapy.Spider):
+    name = "subforum"
     start_urls = ["https://www.diabetes.co.uk/forum/"]
     html_path = r"C:\Users\jerem\Desktop\jh-summer19\Exercises\Exercise10_Extract_Number_of_Posts_and_Comments\scrapyDiabetesForum\source"
 

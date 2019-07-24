@@ -15,12 +15,12 @@ def get_subforumLinks():
     subforumlinks.pop(0) 
     return subforumlinks
 
-# scrapy crawl subforumsource
-# scrapy crawl subforumsource -o subforumsource.json
-# scrapy crawl subforumsource -o subforumsource.jl
+# scrapy crawl threadssource
+# scrapy crawl threadssource -o threadssource.json
+# scrapy crawl threadssource -o threadssource.jl
 
-class SubForumSourceSpider(scrapy.Spider):
-    name = "subforumsource"
+class ThreadsSourceSpider(scrapy.Spider):
+    name = "threadssource"
     start_urls = get_subforumLinks()
     html_path = r"C:\Users\jerem\Desktop\jh-summer19\Exercises\Exercise11_Extract_Threads\scrapyDiabetesForum\subforum\subforum_source"
 
