@@ -34,5 +34,5 @@ from rfut.scripts.sampler_for_summaries import run as run_sampler_for_summaries
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")
-    run_sampler_for_summaries()
+    run_pd_tools_dataframe_splitter()
     print("--- %s seconds ---" % (time.time() - start_time))
