@@ -21,18 +21,21 @@ from rfut.scripts.dataset_builder_posts_to_sentences import run as run_dataset_b
 from rfut.scripts.dataset_builder_first_posts import run as run_dataset_builder_first_posts
 from rfut.scripts.dataset_builder_add_subforum_number_to_i_csv_files import run as run_dataset_builder_add_subforum_number_to_i_csv_files
 from rfut.scripts.core_nlp_clause_tags_to_is_question import run as run_core_nlp_clause_tags_to_is_question
-from rfut.scripts.update_mturk_sample import run as run_update_mturk_sample
 from rfut.scripts.add_sentence_id_to_dataset import run as run_add_sentence_id_to_dataset
 from rfut.scripts.group_n_sentences_in_one_row_for_mturk import run as run_group_n_sentences_in_one_row_for_mturk
-from rfut.scripts.parse_mturk_no2_results import run as run_parse_mturk_no2_results
 from rfut.scripts.count_duplicate_sentences_in_summaries import run as run_count_duplicate_sentences_in_summaries
 from rfut.scripts.summaries_to_sentences import run as run_summaries_to_sentences
 from rfut.scripts.sampler_for_summaries import run as run_sampler_for_summaries
-
+from rfut.scripts.sample_mturk_no2_results_to_rows import run as run_sample_mturk_no2_results_to_rows
+from rfut.scripts.sample_mturk_no2_results_to_rows_with_sentences import run as run_sample_mturk_no2_results_to_rows_with_sentences
+from rfut.scripts.sample_mturk_no2_results_grouped import run as run_sample_mturk_no2_results_grouped
+from rfut.scripts.sample_mturk_no2_final_results_merged import run as run_sample_mturk_no2_final_results_merged
+from rfut.scripts.dataset_builder_for_random_forest import run as run_dataset_builder_for_random_forest
+from rfut.scripts.classifier_random_forest_bow import run as run_classifier_random_forest_bow
 
 
 def run():
     start_time = time.time()
     print("Project R.F.U.T. is running!")
-    run_pd_tools_dataframe_splitter()
+    run_classifier_random_forest_bow()
     print("--- %s seconds ---" % (time.time() - start_time))
