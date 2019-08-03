@@ -6,12 +6,7 @@
 
 #### 1.1.1 Create a datasets with sentences labelled to 0 and 1. 1: indicating that the sentence expresses a need and 0: any other sentence.
 
-- a) 
-
 #### 1.1.2 Separate the datasets in a training set and a test set
-
-- a) Create a base training set and test set 
-- b) Create an algorithm that generate 10 training sets and 10 test sets automatically based on the original datasets 
 
 #### 1.1.3 Train a classifier on the datasets.
 
