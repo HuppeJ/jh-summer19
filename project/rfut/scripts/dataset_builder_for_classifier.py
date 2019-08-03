@@ -28,7 +28,7 @@ def run():
 
 
     # Write output file
-    filename = "dataset_for_random_forest.csv"
+    filename = "dataset_for_classifier.csv"
     output_path = [PROJECT_PATH, DATA_OUTPUT_PATH,  "mturk", "submission_mturk_no2", "results", filename]
     output_file = os.path.join("", *output_path)
     df_yes.to_csv(output_file, sep=",", encoding="utf-8", index=False)

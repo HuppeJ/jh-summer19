@@ -40,7 +40,7 @@ from imblearn.under_sampling import RandomUnderSampler
 
 def run():
     #Load dataset
-    file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "mturk", "submission_mturk_no2", "results", "dataset_for_random_forest.csv"]
+    file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "mturk", "submission_mturk_no2", "results", "dataset_for_classifier.csv"]
     input_file = os.path.join("", *file_path)
     df_data = pd.read_csv(input_file)
 
