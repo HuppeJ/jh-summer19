@@ -190,3 +190,74 @@ Grouped 5 sentences per row to submit multiple sentences in one HIT in mturk
 Which gave us the file below:
 
 ## 30. sample_dataset_mturk_no2_group_of_5_sent.csv
+
+Retrieved labelled data from mturk
+
+## 31. Batch_3719368_batch_results
+
+Separated the 5 sentences per row in one sentence per row.
+(sample_mturk_no2_results_to_rows.py)
+Which gave us the file below:
+
+## 32. sample_dataset_mturk_no2_results_to_rows.csv
+
+The sentence property from sample_dataset_mturk_no2_with_sentence_ids.csv has been retrieved with the sentence_id property and added to sample_dataset_mturk_no2_results_to_rows.csv.
+(sample_mturk_no2_results_to_rows_with_sentences.py)
+
+Which gave us the file below:
+
+## 33. sample_dataset_mturk_no2_results_to_rows_with_sentence.csv
+
+The value with "invalid_value" in property "expresses_a_need" from dataset sample_dataset_mturk_no2_results_to_rows_with_sentence.csv were manually labelled
+
+(no python file)
+
+Which gave us the file below:
+
+## 34. sample_dataset_mturk_no2_results_to_rows_with_sentence_and_invalid_values_labelled.csv
+
+Mapped the 3 workers answers to 7 different groups of answers see table below:
+
+Answers to Group Label:
+1 : yes yes yes 
+2 : yes yes x 
+3 : no no no 
+4 : no no x 
+5 : cd cd cd
+6 : cd cd x 
+7 : yes no cd 
+Where: 
+x: is any value
+
+So 
+
+Group Label 1, 3, 5 are answers where all workers agreed on the label
+
+Group Label 2, 4, 6, 7 are answers where workers disagreed on the label
+
+(sample_mturk_no2_results_grouped.py)
+
+Which gave us the file below:
+
+## 36. sample_mturk_no2_results_grouped.csv
+
+All the properties from sample_dataset_mturk_no2_with_sentence_ids.csv have been retrieved with the sentence_id property and added to sample_mturk_no2_results_grouped.csv.
+
+(sample_mturk_no2_final_results_merged.py)
+
+Which gave us the file below:
+
+## 37. sample_dataset_mturk_no2_merged_results
+
+Labelled workers answer to expresses_a_need_final property based on the expresses_a_need_grouped property
+
+New label:
+
+- expresses_a_need_grouped: 1 & 2 are mapped to expresses_a_need_final: 1
+- expresses_a_need_grouped: 3 & 4 are mapped to expresses_a_need_final: 2
+
+(dataset_builder_for_classifier.py)
+
+Which gave us the file below:
+
+## 38. dataset_for_classifier.csv
