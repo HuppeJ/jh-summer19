@@ -1,4 +1,4 @@
-# Plan 1 - May 30
+# Plan 1 - May 30 2019
 
 ## 1. Be able to identify needs in unstructured text.
 
@@ -10,10 +10,4 @@
 
 #### 1.1.3 Train a classifier on the datasets.
 
-- Sklearn
- 
-### 1.2 Be able to identify the need in a sentence that expresses a need.
-
-## 2. 
-
-### *Topic modeling to find main subject of a forum post?*
+### 1.2 Next step: Be able to identify the need in a sentence that expresses a need.
