@@ -2,7 +2,7 @@
 # 1: Download Stanford-core nlp: https://stanfordnlp.github.io/CoreNLP/download.html
 # 2: Unzip downloaded file
 # 3: Open a Microsoft Windows Command Prompt (not powershell) and navigate inside the unzipped file
-# 4: Run the command: 
+# 4: Run the command (remove the "#"): 
 # java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer \
 # -preload tokenize,ssplit,pos,lemma,ner,parse,depparse \
 # -status_port 9000 -port 9000 -timeout 15000 & 
