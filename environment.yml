@@ -1,4 +1,4 @@
-name: technology_exploration
+name: rfut_env
 channels:
   - anaconda
   - conda-forge
