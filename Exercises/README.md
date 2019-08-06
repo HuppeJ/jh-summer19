@@ -1,4 +1,4 @@
-# Description of Exercises
+# Exercises
 
 Several proofs of concept have been developed to evaluate different ideas. All of these proofs of concept have been grouped under different exercises. The code and datasets of all these exercises can be found in the `jh-summer19/Exercises` folder. The description of each exercise can be found below. 
 
