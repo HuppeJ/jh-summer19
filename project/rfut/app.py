@@ -31,11 +31,11 @@ from rfut.scripts.sample_mturk_no2_results_to_rows_with_sentences import run as 
 from rfut.scripts.sample_mturk_no2_results_grouped import run as run_sample_mturk_no2_results_grouped
 from rfut.scripts.sample_mturk_no2_final_results_merged import run as run_sample_mturk_no2_final_results_merged
 from rfut.scripts.dataset_builder_for_classifier import run as run_dataset_builder_for_classifier
-from rfut.scripts.classifier_random_forest_bow import run as run_classifier_random_forest_bow
+from rfut.scripts.classifier_random_forest_bow_&_tfidf import run as run_classifier_random_forest_bow_&_tfidf
 
 
 def run():
     start_time = time.time()
     print("-- Project R.F.U.T. is running! --")
-    run_classifier_random_forest_bow()
+    classifier_random_forest_bow_&_tfidf()
     print("--- %s seconds ---" % (time.time() - start_time))
