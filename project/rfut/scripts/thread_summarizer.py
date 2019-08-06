@@ -16,8 +16,8 @@ from rfut.objects.summarizer_tool import SummarizerTool
 # https://stackoverflow.com/questions/14509192/how-to-import-functions-from-other-projects-in-python
 sys.path.insert(0, os.path.abspath(HUPPEJ_GENSIM_PROJECT_PATH))
 
-from gensim.summarization.summarizer import summarize as gensim_textrank_summarize
-from gensim.summarization.summarizer import _format_results 
+#from gensim.summarization.summarizer import summarize as gensim_textrank_summarize
+#from gensim.summarization.summarizer import _format_results 
 #from huppej_gensim.gesim.summarization import keywords
 
 # TIMES : 
