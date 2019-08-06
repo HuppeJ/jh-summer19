@@ -88,6 +88,8 @@
 
 - ~\ref{threads_text_for_summarization_no2}
 - ~\ref{threads_summarized_lexrank_20_to_20}
+- ~\ref{threads_summarized_lexrank_20_to_20_to_sentences}
+- ~\ref{threads_summarized_lexrank_20_to_20_to_sentences_sample_no1}
 
 ### Analyze of Best Summarization Technique Datasets
 

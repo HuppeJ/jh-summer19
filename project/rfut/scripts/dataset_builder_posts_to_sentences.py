@@ -37,9 +37,6 @@ def run():
 
     print("selected_subforums", selected_subforums)
 
-    # TODO: to comment
-    #selected_subforums = [1]
-
     posts_path = [DIABETES_DATA_PATH, POSTS_DATA_PATH]
     posts_directory = os.path.join('', *posts_path)
     i = 0 

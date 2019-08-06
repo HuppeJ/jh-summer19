@@ -27,9 +27,6 @@ df_input = pd.read_csv(input_file)
 
 
 #%%
-#df2 = pd.DataFrame(np.random.rand(10, 4), columns=['is_question', 'has_annotations'])
-
-#df_input[['is_question', 'has_annotations']].plot.bar();
 df_stats = pd.DataFrame()
 
 grouped = df_input.groupby("subforum_number")

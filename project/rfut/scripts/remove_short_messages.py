@@ -1,9 +1,3 @@
-### Algorithm: 
-
-# - 1. Open parsed_0.02_of_threads_to_sentences data csv file
-# - 2. 
-# - 3. Export the new dataframe
-
 # Imports
 import csv
 import os

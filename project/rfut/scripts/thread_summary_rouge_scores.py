@@ -52,9 +52,6 @@ def run():
     input_file = os.path.join("", *thread_text_file)
     df_threads_summaries = pd.read_csv(input_file)
 
-    # TODO REMOVE LINE BELOW
-    #df_threads_summaries = df_threads_summaries[:2]
-
     df_scores = df_threads_summaries[["thread_id"]].copy()
 
     for row in df_threads_summaries.itertuples():

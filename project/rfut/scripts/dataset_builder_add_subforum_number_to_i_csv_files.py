@@ -33,9 +33,6 @@ def run():
             subforum_number = int(df_subforum.at[row.Index, SUBFORUM_NUMBER_COLUMN])
             selected_subforums.add(subforum_number)
 
-    # TODO: to comment
-    # selected_subforums = [1]
-
     posts_path = [DIABETES_DATA_PATH, POSTS_DATA_PATH]
     posts_directory = os.path.join('', *posts_path)
 

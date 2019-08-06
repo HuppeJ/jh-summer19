@@ -32,10 +32,7 @@ def run():
         if is_selected:
             subforum_number = int(df_subforum.at[row.Index, SUBFORUM_NUMBER_COLUMN])
             selected_subforums.add(subforum_number)
-
-    # TODO: to comment
-    # selected_subforums = [1]
-    
+   
     df_output = pd.DataFrame()
     post_number_to_select = "#1"
 

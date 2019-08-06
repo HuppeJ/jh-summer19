@@ -21,7 +21,6 @@ def run():
 
     df_mturk = df_mturk.merge(df_results, on='sentence_id')
 
-
     # Write output file
     filename = "sample_dataset_mturk_no2_merged_results.csv"
     output_path = [PROJECT_PATH, DATA_OUTPUT_PATH,  "mturk", "submission_mturk_no2", "results", filename]

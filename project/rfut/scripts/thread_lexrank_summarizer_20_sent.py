@@ -39,9 +39,6 @@ def run():
     input_file = os.path.join("", *thread_text_file)
     df_threads_text = pd.read_csv(input_file)
 
-    # TODO REMOVE LINE BELOW
-    # df_threads_text = df_threads_text[:2]
-
     min_nb_sentences = 1
     max_nb_sentences = 20
     

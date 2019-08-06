@@ -28,12 +28,10 @@ ta = ThreadAnalyzer()
 sp = SentenceParser()
 
 # Load sample_dataset_mturk_no2 (First dataset ready to sumbit to mturk)
-input_file_name_1 = "sample_dataset_mturk_no12.csv"
-file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, "check_stat_nb_sent_in_mturk_and_sum_datasets", input_file_name_1]
+input_file_name_1 = "sample_dataset_mturk_no2.csv"
+file_path = [PROJECT_PATH, DATA_OUTPUT_PATH, input_file_name_1]
 input_file = os.path.join("", *file_path)
 df_dataset_mturk_no2 = pd.read_csv(input_file)
-
-#"check_stat_nb_sent_in_mturk_and_sum_datasets",
 
 # Get_list_of_sent_for_each_thread for the dataset sample_dataset_mturk_no2
 df_dataset_mturk_no2_list_of_sent = ta.get_list_of_sent_for_each_thread(df_dataset_mturk_no2)

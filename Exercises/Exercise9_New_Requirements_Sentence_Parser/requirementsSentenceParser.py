@@ -81,7 +81,6 @@ with open(dir_path + annotation_file_name) as csv_file:
 requirements_sentences = []
 for k in data_dict:
     for sentence in data_dict[k]["sentences"]:
-        # TODO: We could check if lemmatizing or stemming the word would help  
         if any(word in sentence for word in requirements_word_dict):
             requirements_sentences.append(sentence)
     question = data_dict[k]["question"]
