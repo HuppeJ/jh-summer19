@@ -1,4 +1,9 @@
 #%%
+
+# Retreive statistics to compare sample_dataset_mturk_no2.csv and 
+# threads_summarized_lexrank_20_to_20.csv
+# (Find sentences that are in both datasets)
+
 # Imports
 import csv
 import os

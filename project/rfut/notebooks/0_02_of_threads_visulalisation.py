@@ -1,4 +1,7 @@
 #%%
+# Plots nb_of_is_question sentences and  nb_of_has_annotations sentences 
+# for each sub-forums
+
 # Imports
 import csv
 import os

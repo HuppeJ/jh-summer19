@@ -1,4 +1,7 @@
 #%%
+
+# Generate graph to visualize the rouge score of the different summarization technique
+
 # Imports
 import csv
 import os
@@ -140,12 +143,5 @@ for score_technique in score_techniques:
 
 
 
-
-
-
-
 #%%
 
-
-
-#%%
