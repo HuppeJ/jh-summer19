@@ -2,9 +2,11 @@
 
 This repository presents the source code of the project **Software Requirements from Unstructured Text**. 
 
-I started the project **Software Requirements from Unstructured Text** during my 2019 summer internship. The goal of this project is to find needs expressed in unstructured conversations and mapped them to software requirements. 
+I started the project **Software Requirements from Unstructured Text** during my 2019 summer research internship. The goal of this project is to find needs expressed in unstructured conversations and mapped them to software requirements. 
 
 The final code of the project can be found under the folder `jh-summer19/project`.
+
+The final report of the project can be found [here](https://github.com/HuppeJ/jh-summer19/blob/master/Report_Jeremie_Summer_2019.pdf).
 
 ## First Steps of the Project
 
